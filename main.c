@@ -1189,38 +1189,6 @@ void FaultCheck(void) // 100 uS
         Fault_Count_OutputOverVoltage = 0;
     }
     
-/*    
-// Check Output OverCurrent
-    if((averageRectifiedCurrent > inverterOutputOverCurrent)&&(outputOverCurrentFlag == 0))
-    {
-        Fault_Count_OutputOverCurrent++;
-        if(Fault_Count_OutputOverCurrent > CNT_10MS)
-        {
-            if(faultState == FAULT_CLEAR)
-            {
-                faultState = FAULT_OVER_CURRENT_OP;
-                outputOverCurrentFlag = 1;
-            }
-        }
-    }
-    else if((averageRectifiedCurrent < OUTPUT_OVERCURRENT_1A)&&(outputOverCurrentFlag == 1))
-    {
-        Fault_Count_OutputOverCurrent++;
-        if(Fault_Count_OutputOverCurrent > CNT_2SEC)
-        {
-            outputOverCurrentFlag = 0;
-            if(faultState == FAULT_OVER_CURRENT_OP)
-            {
-                faultState = FAULT_CLEAR;
-            }
-        }
-    }
-    else
-    {
-        Fault_Count_OutputOverCurrent = 0;
-    }
-*/    
-   
 // Check PCB OverTemperature Condition
     if((adc_avg_pcbTemp > TEMP_50_C)&&(pcbTemperatureOverFlag == 0))
     {
@@ -1323,10 +1291,7 @@ void UpdateParameter(void)
     if(SFRAC16control > 32767) SFRAC16control = 32767;
         
     Buff_Period = sineTable_20KHz[Sampling_Count_SineWave];    // 20KHz
-    /*
-    Buff_Duty = (uint32_t) PercentModulation * Buff_Period;  // Max 65535 * 100 = 6553500
-    DutyCycle = Buff_Duty /100;
-    */
+
     Buff_Duty = (uint32_t) SFRAC16control * Buff_Period;  // Max 65535 * 100 = 6553500
     DutyCycle = Buff_Duty /32767;
     
