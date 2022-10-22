@@ -75,6 +75,11 @@
 
 // ----------------- 
 /* Q15 Format */
+
+#define VREF_ADC                        3300        //  3300 mV 
+#define IP_VOLTAGE_GAIN                   17 
+#define OP_VOLTAGE_GAIN                   10
+
 // DC InputCurrent
 #define BATTERY_OVERCURRENT_1A           412        //  1.00 A
 #define BATTERY_OVERCURRENT_2A           824        //  2.00 A
@@ -286,14 +291,18 @@ void FaultCheck(void);
 void UpdateParameter(void);
 void SentParameters(void);
 
+// Adc Calculation
+uint16_t DCVoltageCalculate(uint16_t adcVal, uint16_t ref, uint16_t offset);
+uint16_t DCCurrentCalculate(uint16_t adcVal, uint16_t ref, uint16_t offset);
+uint16_t ACVoltageCalculate(uint16_t adcVal, uint16_t ref, uint16_t offset);
+uint16_t ACCurrentCalculate(uint16_t adcVal);
+uint16_t PCBTempCalculate(uint16_t adcVal, uint16_t ref, uint16_t offset);
+    
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 void Delay_ms(uint16_t d);
 /* ~~~~~~~~~~~~~~~~~~~~~~  PID Variable Definitions  ~~~~~~~~~~~~~~~~~~~~~~~ */
 
 /* Variable Declaration required for each PID controller in the application */
-
-tPID pfcVoltagePID;
-tPID pfcCurrentPID;
 
 tPID outputVoltagePID;  // kritsana
 
@@ -322,10 +331,10 @@ fractional outputVoltageHistory[3] __attribute__ ((section (".ybss, bss, ymemory
 #define PID_OUTPUTVOLTAGE_C Q15(PID_OUTPUTVOLTAGE_KD)
 
       
-#define PID_OUTPUTVOLTAGE_REFERENCE  6300			 
-#define PID_OUTPUTVOLTAGE_MIN 	  0			  
+#define PID_OUTPUTVOLTAGE_REFERENCE         6300			 
+#define PID_OUTPUTVOLTAGE_MIN               0			  
 #define VOLTAGE_SOFTSTART_INCREMENT	 ((PID_OUTPUTVOLTAGE_REFERENCE - PID_OUTPUTVOLTAGE_MIN) / 500 ) 
-#define OUTPUTSOFTSTART_INCREMENT  1
+#define OUTPUTSOFTSTART_INCREMENT           1
 
 
 // State
@@ -421,11 +430,13 @@ uint16_t adc_avg_currentInput, adc_avg_voltageInput, adc_avg_voltageOutput, adc_
 uint32_t sum_ch0, sum_ch1, sum_ch2, sum_ch3, sum_ch4;
 uint16_t sampl_ch0, sampl_ch1, sampl_ch2, sampl_ch3, sampl_ch4;
 
+uint16_t avdd_measr;   // adaptive VADD reference
+
 uint16_t adc_offset0, adc_offset1, adc_offset2, adc_offset3, adc_offset4;
 uint16_t iout_mv_u16;  // avg value - initial value
 uint16_t delta_adc_iin;
 int16_t  delta_adc_iout;
-uint16_t abs_delta_currentOutput;
+
 
 // acCurrent
 int16_t  inverterOutputCurrent =0;
@@ -863,6 +874,7 @@ void FLT1_Detected(void)
 {
     hardwareFault = FLT1_DETECTED;   
 }
+
 // ADC Conversion Complete  7KHz
 void ADC_ISR()  
 {   
@@ -933,7 +945,6 @@ void ADC_ISR()
     sum_ch0 -= adc_avg_currentInput;   
     adc_avg_currentInput = (uint32_t)(sum_ch0)/NUMSAMPLES;   
     
-    delta_adc_iin = adc_avg_currentInput - adc_offset0;
     //-------------------------------------------------
     sampl_ch1 = adc_vbatt;
     sum_ch1 += sampl_ch1;
@@ -958,33 +969,155 @@ void ADC_ISR()
     sum_ch4 -= adc_avg_pcbTemp;
     adc_avg_pcbTemp = (uint32_t)(sum_ch4)/NUMSAMPLES; 
         
-    //-------------------------------------------------    
-    /* In Q15 1Lsb = 0.1007080078 mV*/
-    // Current Input
-    iin_mv = (float)(delta_adc_iin * 0.002427321214);  // 12 bit
-    ibatt_u16 = (uint16_t)(iin_mv*1000); //mV/mR    // 1
-   
-    // Voltage Input
-    vin_mv = (float)(adc_avg_voltageInput * 1.728110599); // = (3300/32768)*Gain, (3300/32768)*17
-    vbatt_u16 = (uint16_t)vin_mv;
+    //-------------------------------------------------  
+    // display & user monitoring
     
-    // Voltage Output
-    vout_mv = (float)((adc_avg_voltageOutput * 1.016235352)*1.414);
-    vout_u16 = (uint16_t)vout_mv;
-    
-    // Current Output
-//    iout_mv = (float)(delta_adc_iout * (3.3/1024.0))/0.066;  
-    iout_mv = (float)(delta_adc_iout * 0.001525878906); 
-    iout_u16 = (uint16_t)(iout_mv * 1000);      
-            
-    // Temperature    
-    temp_mv = (float)(adc_avg_pcbTemp * 0.100780078);  // mV
-    temp_c = (float)(temp_mv - 500)/10.00;
-    temp_u16 = temp_c * 100;
-        
+    ibatt_u16 = DCCurrentCalculate(adc_avg_currentInput, 32767, adc_offset0);
+    vbatt_u16 = DCVoltageCalculate(adc_avg_voltageInput, 32767,  adc_offset1);
+    vout_u16  = ACVoltageCalculate(adc_avg_voltageOutput, 32767,  adc_offset2);  
+    iout_u16  = ACCurrentCalculate(averageRectifiedCurrent);  
+    temp_u16  = PCBTempCalculate(adc_avg_pcbTemp,32767,  adc_offset4);
+         
 }
 
+uint16_t DCVoltageCalculate(uint16_t adcVal, uint16_t ref, uint16_t offset)  /* battery voltage */
+{   
+    uint16_t adc_dat, adc_reference, adc_offset;
+    uint16_t delta_adc;
+    uint16_t buff_vin_mv, tempfraction, round_vin_mv;
+    
+    adc_dat = adcVal;
+    adc_reference = ref;
+    adc_offset = offset;
+ 
+    delta_adc = abs(adc_dat - adc_offset);
+    
+    if(delta_adc < 0) delta_adc = 0;
+    if(delta_adc > 32767) delta_adc = 32767;
+    
+    buff_vin_mv = (uint32_t)(delta_adc * VREF_ADC)/adc_reference;  // max = (32767 * 3300)/32767 = 3300 = 3300 mV
+    buff_vin_mv = buff_vin_mv * IP_VOLTAGE_GAIN;                      // 3300 mV * 17 = 56100 mV = 56.1 V
+    
+    tempfraction = buff_vin_mv % 10;
+    
+    if(tempfraction > 5) round_vin_mv = (buff_vin_mv + 5)/10;  // Round up
+    else round_vin_mv = buff_vin_mv /10;                       // Round douwn
+    
+    return round_vin_mv;   // return  xx.xx Volt
+    
+}
 
+uint16_t DCCurrentCalculate(uint16_t adcVal, uint16_t ref, uint16_t offset)  /* battery current */
+{
+    uint16_t adc_dat, adc_reference, adc_offset;  
+    uint16_t delta_adc;
+    uint16_t tempfraction, round_iin_mv, ibatt_mA;
+    float buff_iin_mv;  
+    
+    adc_dat = adcVal;
+    adc_reference = ref;
+    adc_offset = offset;
+     
+    delta_adc = abs(adc_dat - adc_offset);
+    
+    if(delta_adc < 0) delta_adc = 0;
+    if(delta_adc > 32767) delta_adc = 32767;
+    
+    buff_iin_mv = (float)(delta_adc * 0.06937218176);  // 10 bit //  1/(((Rsh * Opamp Gain)/AVDD) * 1023)
+    ibatt_mA    = (uint16_t)(buff_iin_mv * 1000);   
+
+    tempfraction = ibatt_mA % 10;
+    
+    if(tempfraction > 5) round_iin_mv = (ibatt_mA + 5)/10;  // Round up
+    else round_iin_mv = ibatt_mA /10;                       // Round douwn
+    
+    return ibatt_mA;
+
+}
+
+uint16_t ACVoltageCalculate(uint16_t adcVal, uint16_t ref, uint16_t offset)  /* output voltage */
+{   
+    uint16_t adc_dat, adc_reference, adc_offset; 
+    uint16_t delta_adc;
+    uint16_t buff_vout_mv, tempfraction, round_vout_mv;
+    //float buff_vout_mv_f;
+    
+    adc_dat = adcVal;
+    adc_reference = ref;
+    adc_offset = offset;
+     
+    delta_adc = abs(adc_dat - adc_offset);
+    
+    if(delta_adc < 0) delta_adc = 0;
+    if(delta_adc > 32767) delta_adc = 32767;
+ 
+    //buff_vout_mv_f = (float)((delta_adc * 1.016235352)/1.414);
+    //buff_vout_mv_f = (uint16_t)vout_mv;
+    
+    buff_vout_mv = (uint32_t)(delta_adc * VREF_ADC)/adc_reference;      // max = (32767 * 3300)/32767 = 3300 = 3300 mV
+    buff_vout_mv = buff_vout_mv * OP_VOLTAGE_GAIN;                      // 3300 mV * 10 = 33300 mV = 33.3 V
+    
+    tempfraction = buff_vout_mv % 10;
+    
+    if(tempfraction > 5) round_vout_mv = (buff_vout_mv + 5)/10;     // Round up
+    else round_vout_mv = buff_vout_mv /10;                          // Round douwn   
+    
+    return round_vout_mv;
+}
+
+uint16_t ACCurrentCalculate(uint16_t adcVal)  /* battery current */
+{   
+    uint16_t adc_dat;
+    uint16_t buff_iout_mA, tempfraction, round_iout_mA;
+    float    buff_iout_mv_f;
+    
+    adc_dat = adcVal;
+    
+    if(adc_dat < 0) adc_dat = 0;
+    if(adc_dat > 32767) adc_dat = 32767;
+    
+//  iout_mv = (float)(delta_adc_iout * (3.3/1024.0))/0.066;  
+    buff_iout_mv_f = (float)(adc_dat * 0.001525878906); 
+    buff_iout_mA   = (uint16_t)(buff_iout_mv_f * 1000); 
+    
+    tempfraction = buff_iout_mA % 10;
+    
+    if(tempfraction > 5) round_iout_mA = (buff_iout_mA + 5)/10;  // Round up
+    else round_iout_mA = buff_iout_mA /10;                       // Round douwn
+
+    return round_iout_mA;
+}
+
+uint16_t PCBTempCalculate(uint16_t adcVal, uint16_t ref, uint16_t offset)  /* PCB temperature */
+{   
+    uint16_t adc_dat, adc_reference, adc_offset; 
+    uint16_t delta_adc;
+    uint16_t sensor_mv, temp_c, tempfraction, pcb_temp_c;
+    
+    adc_dat = adcVal;
+    adc_reference = ref;
+    adc_offset = offset;
+     
+    delta_adc = abs(adc_dat - adc_offset);
+    
+    if(delta_adc < 0) delta_adc = 0;
+    if(delta_adc > 32767) delta_adc = 32767;
+    
+    /*
+    temp_mv = (float)(dat * 0.100780078);  // mV
+    temp_c = (float)(temp_mv - 500)/10.00;
+    temp_u16 = temp_c * 100; 
+    */
+    sensor_mv = (uint32_t)(delta_adc * VREF_ADC)/adc_reference;  // max = (32767 * 3300)/32767 = 3300 = 3300 mV
+    temp_c    = (sensor_mv - 500)/10;                      // (3300 - 500)/10 = 2800/10 = 280.0 Degree C
+    
+    tempfraction = temp_c % 10;
+    
+    if(tempfraction > 5) pcb_temp_c = (temp_c + 5)/10;    // Round up
+    else pcb_temp_c = temp_c /10;                         // Round douwn
+    
+    return pcb_temp_c;   // return  xx.x 
+}
 //-------------- End of Interrupt Service Routine -------------
 
 void FullBridgeDrive(void)
