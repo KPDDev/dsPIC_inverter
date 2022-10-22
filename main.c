@@ -321,12 +321,9 @@ fractional outputVoltageHistory[3] __attribute__ ((section (".ybss, bss, ymemory
 // C = Kd
 #define PID_OUTPUTVOLTAGE_C Q15(PID_OUTPUTVOLTAGE_KD)
 
-//#define OUTPUT_TARGET                5430           // for debug       
-#define PID_OUTPUTVOLTAGE_REFERENCE  6300			 /* Resistor divider (2.2k / (10k + 2.2k)) * 12V = 2.16V # Feedback from 220 : 12 V transformer
-													((2.16V * 1024) / 3.3 ) = 671 for the ADC reading for Q15 format 
-										 			671 * 32 = 21472  */
+      
+#define PID_OUTPUTVOLTAGE_REFERENCE  6300			 
 #define PID_OUTPUTVOLTAGE_MIN 	  0			  
-//                                                           21472 - 0 / 500  = 42.9 = 42 
 #define VOLTAGE_SOFTSTART_INCREMENT	 ((PID_OUTPUTVOLTAGE_REFERENCE - PID_OUTPUTVOLTAGE_MIN) / 500 ) 
 #define OUTPUTSOFTSTART_INCREMENT  1
 
@@ -490,66 +487,6 @@ const unsigned int sineTable_20KHz[200] = {  // 20KHz // 3000 u16 ,  Center Alig
 
 };
 
-/*
-const unsigned int sineTable_180[180] = {  // 20KHz // 3000 u16 ,  Center Align  sample every 1 Degree
-   0,   52,  104,  157,  209,  261,  313,  365,  417,  469,  520,  572,  623,  674,  725,  776,  826,  877,
- 927,  976, 1026, 1075, 1123, 1172, 1220, 1267, 1315, 1361, 1408, 1454, 1500, 1545, 1589, 1633, 1677, 1720,
-1763, 1805, 1846, 1887, 1928, 1968, 2007, 2045, 2083, 2121, 2158, 2194, 2229, 2264, 2298, 2331, 2364, 2395,
-2427, 2457, 2487, 2516, 2544, 2571, 2598, 2623, 2648, 2673, 2696, 2718, 2740, 2761, 2781, 2800, 2819, 2836,
-2853, 2868, 2883, 2897, 2910, 2923, 2934, 2944, 2954, 2963, 2970, 2977, 2983, 2988, 2992, 2995, 2998, 2999,
-3000, 2999, 2998, 2995, 2992, 2988, 2983, 2977, 2970, 2963, 2954, 2944, 2934, 2923, 2910, 2897, 2883, 2868,
-2853, 2836, 2819, 2800, 2781, 2761, 2740, 2718, 2696, 2673, 2648, 2623, 2598, 2571, 2544, 2516, 2487, 2457,
-2427, 2395, 2364, 2331, 2298, 2264, 2229, 2194, 2158, 2121, 2083, 2045, 2007, 1968, 1928, 1887, 1846, 1805,
-1763, 1720, 1677, 1633, 1589, 1545, 1500, 1454, 1408, 1361, 1315, 1267, 1220, 1172, 1123, 1075, 1026,  976,
- 927,  877,  826,  776,  725,  674,  623,  572,  520,  469,  417,  365,  313,  261,  209,  157,  104,    52
-};
-*/
-
-/*
-const unsigned int sineTable_40KHz[400] = {  // 40KHz // 1500 u16 ,  Center Align  sample every 1 Degree
-0, 11,23,35,47,58,70,82,94,105,
-117,129,141,152,164,176,187,199,211,223,
-234,246,257,269,281,292,304,315,327,338,
-350,361,373,384,395,407,418,429,441,452,
-463,474,485,497,508,519,530,541,552,563,
-574,584,595,606,617,627,638,649,659,670,
-680,691,701,712,722,732,743,753,763,773,
-783,793,803,813,823,833,843,852,862,872,
-881,891,900,910,919,928,937,947,956,965,
-974,983,991,1000,1009,1018,1026,1035,1043,1052,
-1060,1068,1077,1085,1093,1101,1109,1117,1125,1132,
-1140,1148,1155,1163,1170,1177,1185,1192,1199,1206,
-1213,1220,1227,1233,1240,1247,1253,1260,1266,1272,
-1278,1285,1291,1297,1302,1308,1314,1320,1325,1331,
-1336,1341,1347,1352,1357,1362,1367,1371,1376,1381,
-1385,1390,1394,1398,1403,1407,1411,1415,1419,1422,
-1426,1430,1433,1437,1440,1443,1446,1449,1452,1455,
-1458,1461,1463,1466,1468,1471,1473,1475,1477,1479,
-1481,1483,1485,1486,1488,1489,1490,1492,1493,1494,
-1495,1496,1497,1497,1498,1498,1499,1499,1499,1499,
-1500,1499,1499,1499,1499,1498,1498,1497,1497,1496,
-1495,1494,1493,1492,1490,1489,1488,1486,1485,1483,
-1481,1479,1477,1475,1473,1471,1468,1466,1463,1461,
-1458,1455,1452,1449,1446,1443,1440,1437,1433,1430,
-1426,1422,1419,1415,1411,1407,1403,1398,1394,1390,
-1385,1381,1376,1371,1367,1362,1357,1352,1347,1341,
-1336,1331,1325,1320,1314,1308,1302,1297,1291,1285,
-1278,1272,1266,1260,1253,1247,1240,1233,1227,1220,
-1213,1206,1199,1192,1185,1177,1170,1163,1155,1148,
-1140,1132,1125,1117,1109,1101,1093,1085,1077,1068,
-1060,1052,1043,1035,1026,1018,1009,1000,991,983,
-974,965,956,947,937,928,919,910,900,891,
-881,872,862,852,843,833,823,813,803,793,
-783,773,763,753,743,732,722,712,701,691,
-680,670,659,649,638,627,617,606,595,584,
-574,563,552,541,530,519,508,497,485,474,
-463,452,441,429,418,407,395,384,373,361,
-350,338,327,315,304,292,281,269,257,246,
-234,223,211,199,187,176,164,152,141,129,
-117,105,94,82,70,58,47,35,23,11        
-};
-*/
-
 //-------- ISR ----------
 
 // Interrupt Timer 3 
@@ -581,8 +518,7 @@ void PriorityHigh()  // TMR3 = 50uS = 20KHz
     {
         PTCONbits.PTEN = false;   // Disable PWM Module        
     }
-    
-    
+       
     Count_1mS++;
     if(Count_1mS > 20) // 1 mS
     {   Count_1mS = 0;
@@ -689,7 +625,6 @@ void PriorityMedium()  // TMR2 = 100uS = 10KHz
                     
                 }
             }
-
             
             startFullBridgeFlag = 1;
             
@@ -914,12 +849,7 @@ void PriorityMedium()  // TMR2 = 100uS = 10KHz
         FAN_OFF;
         countFanOn =0;
     }
-    /*
-    //------- Update GPIO Status
-    if(output_ac == ON) RY_OUTPUT_SetHigh();  else RY_OUTPUT_SetLow();  // RA9
-    if(output_fan == ON) FAN_SetHigh(); else FAN_SetLow();  // RC3
-    if(output_softstart == ON) RY_SS_SetHigh(); else RY_SS_SetLow();  // RC2 
-    */
+    
 }
 
 void Delay_ms(uint16_t d)
@@ -936,13 +866,7 @@ void FLT1_Detected(void)
 // ADC Conversion Complete  7KHz
 void ADC_ISR()  
 {   
-    // to decide use Q15    
-    //adc_ibatt = (ADC1_ConversionResultGet(ADC_IBATT)<<5);       
-    //adc_vbatt = (ADC1_ConversionResultGet(ADC_VBATT)<<5);       
-    //adc_vout  = (ADC1_ConversionResultGet(ADC_VAC)<<5);      
-    //adc_iout  = (ADC1_ConversionResultGet(ADC_IAC)<<5);  
-    //adc_temperature = (ADC1_ConversionResultGet(ADC_TEMP)<<5);     
-
+    
     adc_ibatt = (ADC1BUF0 << 5);       
     adc_vbatt = (ADC1BUF1 << 5);       
     adc_vout  = (ADC1BUF2 << 5);      
@@ -950,7 +874,6 @@ void ADC_ISR()
     adc_temperature = (ADC1BUF4 << 5); 
  
     inverterOutputCurrent = adc_iout - acCurrentOffset;
-    //inverterOutputCurrent = (ADC1BUF3 << 5) - acCurrentOffset;
     
     /* Rectify AC current and check for over current condition on the ouput */
     if(inverterOutputCurrent >= 0)
@@ -1028,11 +951,7 @@ void ADC_ISR()
     sum_ch3 += sampl_ch3;
     sum_ch3 -= adc_avg_currentOutput;
     adc_avg_currentOutput = (uint32_t)(sum_ch3)/NUMSAMPLES;  
-    /*
-    delta_adc_iout = adc_avg_currentOutput - adc_offset3;  
-    abs_delta_currentOutput = abs(adc_avg_currentOutput - adc_offset3);   
-    if(delta_adc_iout < 0) delta_adc_iout = 0;   // clip Negative current
-    */
+
     //-------------------------------------------------
     sampl_ch4 = adc_temperature;
     sum_ch4 += sampl_ch4;
