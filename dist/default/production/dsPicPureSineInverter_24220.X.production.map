@@ -72,36 +72,22 @@ Archive member included because of file (symbol)
                               build/default/production/mcc_generated_files/i2c1_driver.o (___delay32)
 /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(fixunssfsi.EP_o)
                               build/default/production/main.o (___fixunssfsi)
-/Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(floatsisf.EP_o)
-                              build/default/production/main.o (___floatsisf)
 /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(floatunsisf.EP_o)
                               build/default/production/main.o (___floatunsisf)
 /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(funpack.EP_o)
                               /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(fixunssfsi.EP_o) (__funpack)
 /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(udivsi3.EP_o)
                               build/default/production/main.o (___udivsi3)
-/Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(addsf3x.EP_o)
-                              build/default/production/main.o (___subsf3)
-/Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(divsf3x.EP_o)
-                              build/default/production/main.o (___divsf3)
 /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(mulsf3x.EP_o)
                               build/default/production/main.o (___mulsf3)
 /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(dnrmpackfx.EP_o)
-                              /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(addsf3x.EP_o) (__dnrmpackf)
+                              /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(mulsf3x.EP_o) (__dnrmpackf)
 /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(unpackdnrmfx.EP_o)
                               /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(mulsf3x.EP_o) (__unpackdnrmf)
 /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(typefx.EP_o)
-                              /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(addsf3x.EP_o) (__typef)
+                              /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(mulsf3x.EP_o) (__typef)
 /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(propnanfx.EP_o)
-                              /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(addsf3x.EP_o) (__propnanf)
-/Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(spackfx.EP_o)
-                              /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(divsf3x.EP_o) (__spackf)
-/Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(unpackfx.EP_o)
-                              /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(divsf3x.EP_o) (__unpackf)
-/Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(errno.EP_o)
-                              /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(divsf3x.EP_o) (_errno)
-/Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(floatdisf.EP_o)
-                              /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(floatsisf.EP_o) (___floatdisf)
+                              /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(mulsf3x.EP_o) (__propnanf)
 /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(floatundisf.EP_o)
                               /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(floatunsisf.EP_o) (___floatundisf)
 /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(fpack.EP_o)
@@ -133,29 +119,29 @@ Default Scalar Model: Small
 
 section                    address   length (PC units)   length (bytes) (dec)
 -------                    -------   -----------------   --------------------
-.text                        0x200               0xb68          0x111c  (4380)
-.const                       0xd68               0x190           0x258  (600)
-.text                        0xef8              0x1378          0x1d34  (7476)
-.dinit                      0x2270                0x46            0x69  (105)
-.text                       0x22b6                0xb6           0x111  (273)
-.init.delay32               0x236c                0x1c            0x2a  (42)
-.text                       0x2388                0x18            0x24  (36)
+.text                        0x200               0x69c           0x9ea  (2538)
+.const                       0x89c               0x190           0x258  (600)
+.text                        0xa2c              0x1632          0x214b  (8523)
+.dinit                      0x205e                0x40            0x60  (96)
+.text                       0x209e                0x72            0xab  (171)
+.init.delay32               0x2110                0x1c            0x2a  (42)
+.text                       0x212c                0x18            0x24  (36)
 
-                 Total "program" memory used (bytes):         0x3270  (12912) 39%
+                 Total "program" memory used (bytes):         0x2ee6  (12006) 36%
 
 
 "data" Memory  [Origin = 0x1000, Length = 0x1000]
 
 section                    address      alignment gaps    total length  (dec)
 -------                    -------      --------------    -------------------
-.nbss                       0x1000                   0           0x156  (342)
-.xbss                       0x1156                   0             0x6  (6)
-.nbss                       0x115c                   0             0x8  (8)
-.ndata                      0x1164                   0             0x2  (2)
-.nbss                       0x1166                   0             0x6  (6)
+.nbss                       0x1000                   0           0x142  (322)
+.xbss                       0x1142                   0             0x6  (6)
+.nbss                       0x1148                   0             0x8  (8)
+.ndata                      0x1150                   0             0x2  (2)
+.nbss                       0x1152                   0             0x4  (4)
 .ybss                       0x1ffa                   0             0x6  (6)
 
-                 Total "data" memory used (bytes):          0x172  (370) 9%
+                 Total "data" memory used (bytes):          0x15c  (348) 8%
 
 
 Dynamic Memory Usage
@@ -163,301 +149,297 @@ Dynamic Memory Usage
 region                     address                      maximum length  (dec)
 ------                     -------                      ---------------------
 heap                             0                                   0  (0)
-stack                       0x116c                               0xe8e  (3726)
+stack                       0x1156                               0xea4  (3748)
 
-                 Maximum dynamic memory (bytes):          0xe8e  (3726)
+                 Maximum dynamic memory (bytes):          0xea4  (3748)
 
 Info: Project is using a large data memory model when small data memory model is sufficient.
 
 
 External Symbols in Data Memory (by address):
 
-                    0x1000                  _pfcVoltagePID
-                    0x100a                  _pfcCurrentPID
-                    0x1014                  _outputVoltagePID
-                    0x101e                  _SFRAC16control
-                    0x1020                  _readTempQ15
-                    0x1022                  _systemState
-                    0x1023                  _faultState
-                    0x1024                  _faultData
-                    0x1025                  _hardwareFault
-                    0x1026                  _driveState
-                    0x1027                  _switchState
-                    0x1028                  _thermoState
-                    0x1029                  _displayState
-                    0x102a                  _fullBridgeState
-                    0x102b                  _vbattOverVoltageFlag
-                    0x102c                  _vbattUnderVoltageFlag
-                    0x102d                  _outputOverVoltageFlag
-                    0x102e                  _inputOverCurrentFlag
-                    0x102f                  _outputOverCurrentFlag
-                    0x1030                  _outputOverloadFlag
-                    0x1031                  _pcbTemperatureOverFlag
-                    0x1032                  _extTemperatureOverFlag
-                    0x1033                  _HardwareFaultFlag
-                    0x1034                  _SW1Value
-                    0x1035                  _SW2Value
-                    0x1036                  _PWRONValue
-                    0x1037                  _SD_Voltage
-                    0x1038                  _SD_Current
-                    0x1039                  _output_fan
-                    0x103a                  _output_softstart
-                    0x103b                  _output_ac
-                    0x103c                  _startFullBridgeFlag
-                    0x103d                  _Flag_180Degree
-                    0x103e                  _Flag_Ref_Update
-                    0x103f                  _Flag_UpdatePercenMod
-                    0x1040                  _Flag_Capture_currentOffset
-                    0x1041                  _criticalFaultRestartFlag
-                    0x1042                  _criticalFaultFlag
-                    0x1044                  _acCurrentOffsetFlag
-                    0x1046                  _Cnt_ms
-                    0x1048                  _Count_1mS
-                    0x104a                  _Count_20mS
-                    0x104c                  _Count_200mS
-                    0x104e                  _cntLEDTick
-                    0x1050                  _cntToggle
-                    0x1052                  _CntStable
-                    0x1054                  _CntTransError
-                    0x1056                  _systemRestartCounter
-                    0x1058                  _Fault_Count_InputUnderVoltage
-                    0x105a                  _Fault_Count_InputOverVoltage
-                    0x105c                  _Fault_Count_OutputOverVoltage
-                    0x105e                  _Fault_Count_InputOverCurrent
-                    0x1060                  _Fault_Count_OutputOverCurrent
-                    0x1062                  _Fault_Count_PCBOverTemperature
-                    0x1064                  _Fault_Count_extOvertemperature
-                    0x1066                  _Fault_Count_OutputOverload
-                    0x1068                  _Fault_Count_FLT1
-                    0x106a                  _criticalFaultCounter
-                    0x106c                  _countOverVoltage
-                    0x106e                  _countUnderVoltage
-                    0x1070                  _countOverVoltageOutput
-                    0x1072                  _countOverCurrentInput
-                    0x1074                  _countOverCurrentOutput
-                    0x1076                  _countOverload
-                    0x1078                  _countPCBOvertemperature
-                    0x107a                  _countTransfmrOvertemp
-                    0x107c                  _countFlt1
-                    0x107e                  _countFanOn
-                    0x1080                  _Sampling_Count_SineWave
-                    0x1082                  _PercentModulation
-                    0x1084                  _Buff_Period
-                    0x1086                  _Buff_Duty
-                    0x108a                  _DutyCycle
-                    0x108c                  _adc_ibatt
-                    0x108e                  _adc_vbatt
-                    0x1090                  _adc_iout
-                    0x1092                  _adc_vout
-                    0x1094                  _adc_temperature
-                    0x1096                  _adc_avg_currentInput
-                    0x1098                  _adc_avg_voltageInput
-                    0x109a                  _adc_avg_voltageOutput
-                    0x109c                  _adc_avg_currentOutput
-                    0x109e                  _adc_avg_pcbTemp
-                    0x10a0                  _sum_ch0
-                    0x10a4                  _sum_ch1
-                    0x10a8                  _sum_ch2
-                    0x10ac                  _sum_ch3
-                    0x10b0                  _sum_ch4
-                    0x10b4                  _sampl_ch0
-                    0x10b6                  _sampl_ch1
-                    0x10b8                  _sampl_ch2
-                    0x10ba                  _sampl_ch3
-                    0x10bc                  _sampl_ch4
-                    0x10be                  _adc_offset0
-                    0x10c0                  _adc_offset1
-                    0x10c2                  _adc_offset2
-                    0x10c4                  _adc_offset3
-                    0x10c6                  _adc_offset4
-                    0x10c8                  _iout_mv_u16
-                    0x10ca                  _delta_adc_iin
-                    0x10cc                  _delta_adc_iout
-                    0x10ce                  _abs_delta_currentOutput
-                    0x10d0                  _inverterOutputCurrent
-                    0x10d2                  _acCurrentOffset
-                    0x10d4                  _rectifiedInverterOutputCurrent
-                    0x10d6                  _peakInverterOutputVoltage
-                    0x10d8                  _inverterOutputOverCurrent
-                    0x10da                  _acCurrentOffsetAverage
-                    0x10de                  _acCurrentOffsetCounter
-                    0x10e0                  _averageRectifiedCurrent
-                    0x10e2                  _maxInverterOutputCurrent
-                    0x10e4                  _rectifiedInverterOutputCurrentArray
-                    0x10f4                  _rectifiedInverterOutputCurrentSum
-                    0x10f8                  _currentArrayCnt
-                    0x10fa                  _iin_mv
-                    0x10fe                  _vin_mv
-                    0x1102                  _vout_mv
-                    0x1106                  _iout_mv
-                    0x110a                  _temp_mv
-                    0x110e                  _iin_mA
-                    0x1112                  _vin
-                    0x1116                  _vout
-                    0x111a                  _iout_mA
-                    0x111e                  _temp_c
-                    0x1122                  _vbatt_u16
-                    0x1124                  _ibatt_u16
-                    0x1126                  _vout_u16
-                    0x1128                  _iout_u16
-                    0x112a                  _temp_u16
-                    0x112c                  _OutputVoltageReference
-                    0x112e                  _xxx
-                    0x1150                  _i2c1_driver_busCollisionISR
-                    0x1152                  _i2c1_driver_Masteri2cISR
-                    0x1154                  _i2c1_driver_Slavei2cISR
-                    0x1156                  _outputVoltageABC
-                    0x115c                  _TMR2_InterruptHandler
-                    0x1160                  _TMR3_InterruptHandler
+                    0x1000                  _outputVoltagePID
+                    0x100a                  _SFRAC16control
+                    0x100c                  _readTempQ15
+                    0x100e                  _systemState
+                    0x100f                  _faultState
+                    0x1010                  _faultData
+                    0x1011                  _hardwareFault
+                    0x1012                  _driveState
+                    0x1013                  _switchState
+                    0x1014                  _thermoState
+                    0x1015                  _displayState
+                    0x1016                  _fullBridgeState
+                    0x1017                  _vbattOverVoltageFlag
+                    0x1018                  _vbattUnderVoltageFlag
+                    0x1019                  _outputOverVoltageFlag
+                    0x101a                  _inputOverCurrentFlag
+                    0x101b                  _outputOverCurrentFlag
+                    0x101c                  _outputOverloadFlag
+                    0x101d                  _pcbTemperatureOverFlag
+                    0x101e                  _extTemperatureOverFlag
+                    0x101f                  _HardwareFaultFlag
+                    0x1020                  _SW1Value
+                    0x1021                  _SW2Value
+                    0x1022                  _PWRONValue
+                    0x1023                  _SD_Voltage
+                    0x1024                  _SD_Current
+                    0x1025                  _output_fan
+                    0x1026                  _output_softstart
+                    0x1027                  _output_ac
+                    0x1028                  _startFullBridgeFlag
+                    0x1029                  _Flag_180Degree
+                    0x102a                  _Flag_Ref_Update
+                    0x102b                  _Flag_UpdatePercenMod
+                    0x102c                  _Flag_Capture_currentOffset
+                    0x102d                  _criticalFaultRestartFlag
+                    0x102e                  _criticalFaultFlag
+                    0x1030                  _acCurrentOffsetFlag
+                    0x1032                  _Cnt_ms
+                    0x1034                  _Count_1mS
+                    0x1036                  _Count_20mS
+                    0x1038                  _Count_200mS
+                    0x103a                  _cntLEDTick
+                    0x103c                  _cntToggle
+                    0x103e                  _CntStable
+                    0x1040                  _CntTransError
+                    0x1042                  _systemRestartCounter
+                    0x1044                  _Fault_Count_InputUnderVoltage
+                    0x1046                  _Fault_Count_InputOverVoltage
+                    0x1048                  _Fault_Count_OutputOverVoltage
+                    0x104a                  _Fault_Count_InputOverCurrent
+                    0x104c                  _Fault_Count_OutputOverCurrent
+                    0x104e                  _Fault_Count_PCBOverTemperature
+                    0x1050                  _Fault_Count_extOvertemperature
+                    0x1052                  _Fault_Count_OutputOverload
+                    0x1054                  _Fault_Count_FLT1
+                    0x1056                  _criticalFaultCounter
+                    0x1058                  _countOverVoltage
+                    0x105a                  _countUnderVoltage
+                    0x105c                  _countOverVoltageOutput
+                    0x105e                  _countOverCurrentInput
+                    0x1060                  _countOverCurrentOutput
+                    0x1062                  _countOverload
+                    0x1064                  _countPCBOvertemperature
+                    0x1066                  _countTransfmrOvertemp
+                    0x1068                  _countFlt1
+                    0x106a                  _countFanOn
+                    0x106c                  _Sampling_Count_SineWave
+                    0x106e                  _PercentModulation
+                    0x1070                  _Buff_Period
+                    0x1072                  _Buff_Duty
+                    0x1076                  _DutyCycle
+                    0x1078                  _adc_ibatt
+                    0x107a                  _adc_vbatt
+                    0x107c                  _adc_iout
+                    0x107e                  _adc_vout
+                    0x1080                  _adc_temperature
+                    0x1082                  _adc_avg_currentInput
+                    0x1084                  _adc_avg_voltageInput
+                    0x1086                  _adc_avg_voltageOutput
+                    0x1088                  _adc_avg_currentOutput
+                    0x108a                  _adc_avg_pcbTemp
+                    0x108c                  _sum_ch0
+                    0x1090                  _sum_ch1
+                    0x1094                  _sum_ch2
+                    0x1098                  _sum_ch3
+                    0x109c                  _sum_ch4
+                    0x10a0                  _sampl_ch0
+                    0x10a2                  _sampl_ch1
+                    0x10a4                  _sampl_ch2
+                    0x10a6                  _sampl_ch3
+                    0x10a8                  _sampl_ch4
+                    0x10aa                  _avdd_measr
+                    0x10ac                  _adc_offset0
+                    0x10ae                  _adc_offset1
+                    0x10b0                  _adc_offset2
+                    0x10b2                  _adc_offset3
+                    0x10b4                  _adc_offset4
+                    0x10b6                  _iout_mv_u16
+                    0x10b8                  _delta_adc_iin
+                    0x10ba                  _delta_adc_iout
+                    0x10bc                  _inverterOutputCurrent
+                    0x10be                  _acCurrentOffset
+                    0x10c0                  _rectifiedInverterOutputCurrent
+                    0x10c2                  _peakInverterOutputVoltage
+                    0x10c4                  _inverterOutputOverCurrent
+                    0x10c6                  _acCurrentOffsetAverage
+                    0x10ca                  _acCurrentOffsetCounter
+                    0x10cc                  _averageRectifiedCurrent
+                    0x10ce                  _maxInverterOutputCurrent
+                    0x10d0                  _rectifiedInverterOutputCurrentArray
+                    0x10e0                  _rectifiedInverterOutputCurrentSum
+                    0x10e4                  _currentArrayCnt
+                    0x10e6                  _iin_mv
+                    0x10ea                  _vin_mv
+                    0x10ee                  _vout_mv
+                    0x10f2                  _iout_mv
+                    0x10f6                  _temp_mv
+                    0x10fa                  _iin_mA
+                    0x10fe                  _vin
+                    0x1102                  _vout
+                    0x1106                  _iout_mA
+                    0x110a                  _temp_c
+                    0x110e                  _vbatt_u16
+                    0x1110                  _ibatt_u16
+                    0x1112                  _vout_u16
+                    0x1114                  _iout_u16
+                    0x1116                  _temp_u16
+                    0x1118                  _OutputVoltageReference
+                    0x111a                  _xxx
+                    0x113c                  _i2c1_driver_busCollisionISR
+                    0x113e                  _i2c1_driver_Masteri2cISR
+                    0x1140                  _i2c1_driver_Slavei2cISR
+                    0x1142                  _outputVoltageABC
+                    0x1148                  _TMR2_InterruptHandler
+                    0x114c                  _TMR3_InterruptHandler
                     0x1ffa                  _outputVoltageHistory
 
 External Symbols in Data Memory (by name):
 
-                    0x1086                  _Buff_Duty
-                    0x1084                  _Buff_Period
-                    0x1052                  _CntStable
-                    0x1054                  _CntTransError
-                    0x1046                  _Cnt_ms
-                    0x1048                  _Count_1mS
-                    0x104c                  _Count_200mS
-                    0x104a                  _Count_20mS
-                    0x108a                  _DutyCycle
-                    0x1068                  _Fault_Count_FLT1
-                    0x105e                  _Fault_Count_InputOverCurrent
-                    0x105a                  _Fault_Count_InputOverVoltage
-                    0x1058                  _Fault_Count_InputUnderVoltage
-                    0x1060                  _Fault_Count_OutputOverCurrent
-                    0x105c                  _Fault_Count_OutputOverVoltage
-                    0x1066                  _Fault_Count_OutputOverload
-                    0x1062                  _Fault_Count_PCBOverTemperature
-                    0x1064                  _Fault_Count_extOvertemperature
-                    0x103d                  _Flag_180Degree
-                    0x1040                  _Flag_Capture_currentOffset
-                    0x103e                  _Flag_Ref_Update
-                    0x103f                  _Flag_UpdatePercenMod
-                    0x1033                  _HardwareFaultFlag
-                    0x112c                  _OutputVoltageReference
-                    0x1036                  _PWRONValue
-                    0x1082                  _PercentModulation
-                    0x1038                  _SD_Current
-                    0x1037                  _SD_Voltage
-                    0x101e                  _SFRAC16control
-                    0x1034                  _SW1Value
-                    0x1035                  _SW2Value
-                    0x1080                  _Sampling_Count_SineWave
-                    0x115c                  _TMR2_InterruptHandler
-                    0x1160                  _TMR3_InterruptHandler
-                    0x10ce                  _abs_delta_currentOutput
-                    0x10d2                  _acCurrentOffset
-                    0x10da                  _acCurrentOffsetAverage
-                    0x10de                  _acCurrentOffsetCounter
-                    0x1044                  _acCurrentOffsetFlag
-                    0x1096                  _adc_avg_currentInput
-                    0x109c                  _adc_avg_currentOutput
-                    0x109e                  _adc_avg_pcbTemp
-                    0x1098                  _adc_avg_voltageInput
-                    0x109a                  _adc_avg_voltageOutput
-                    0x108c                  _adc_ibatt
-                    0x1090                  _adc_iout
-                    0x10be                  _adc_offset0
-                    0x10c0                  _adc_offset1
-                    0x10c2                  _adc_offset2
-                    0x10c4                  _adc_offset3
-                    0x10c6                  _adc_offset4
-                    0x1094                  _adc_temperature
-                    0x108e                  _adc_vbatt
-                    0x1092                  _adc_vout
-                    0x10e0                  _averageRectifiedCurrent
-                    0x104e                  _cntLEDTick
-                    0x1050                  _cntToggle
-                    0x107e                  _countFanOn
-                    0x107c                  _countFlt1
-                    0x1072                  _countOverCurrentInput
-                    0x1074                  _countOverCurrentOutput
-                    0x106c                  _countOverVoltage
-                    0x1070                  _countOverVoltageOutput
-                    0x1076                  _countOverload
-                    0x1078                  _countPCBOvertemperature
-                    0x107a                  _countTransfmrOvertemp
-                    0x106e                  _countUnderVoltage
-                    0x106a                  _criticalFaultCounter
-                    0x1042                  _criticalFaultFlag
-                    0x1041                  _criticalFaultRestartFlag
-                    0x10f8                  _currentArrayCnt
-                    0x10ca                  _delta_adc_iin
-                    0x10cc                  _delta_adc_iout
-                    0x1029                  _displayState
-                    0x1026                  _driveState
-                    0x1032                  _extTemperatureOverFlag
-                    0x1024                  _faultData
-                    0x1023                  _faultState
-                    0x102a                  _fullBridgeState
-                    0x1025                  _hardwareFault
-                    0x1152                  _i2c1_driver_Masteri2cISR
-                    0x1154                  _i2c1_driver_Slavei2cISR
-                    0x1150                  _i2c1_driver_busCollisionISR
-                    0x1124                  _ibatt_u16
-                    0x110e                  _iin_mA
-                    0x10fa                  _iin_mv
-                    0x102e                  _inputOverCurrentFlag
-                    0x10d0                  _inverterOutputCurrent
-                    0x10d8                  _inverterOutputOverCurrent
-                    0x111a                  _iout_mA
-                    0x1106                  _iout_mv
-                    0x10c8                  _iout_mv_u16
-                    0x1128                  _iout_u16
-                    0x10e2                  _maxInverterOutputCurrent
-                    0x102f                  _outputOverCurrentFlag
-                    0x102d                  _outputOverVoltageFlag
-                    0x1030                  _outputOverloadFlag
-                    0x1156                  _outputVoltageABC
+                    0x1072                  _Buff_Duty
+                    0x1070                  _Buff_Period
+                    0x103e                  _CntStable
+                    0x1040                  _CntTransError
+                    0x1032                  _Cnt_ms
+                    0x1034                  _Count_1mS
+                    0x1038                  _Count_200mS
+                    0x1036                  _Count_20mS
+                    0x1076                  _DutyCycle
+                    0x1054                  _Fault_Count_FLT1
+                    0x104a                  _Fault_Count_InputOverCurrent
+                    0x1046                  _Fault_Count_InputOverVoltage
+                    0x1044                  _Fault_Count_InputUnderVoltage
+                    0x104c                  _Fault_Count_OutputOverCurrent
+                    0x1048                  _Fault_Count_OutputOverVoltage
+                    0x1052                  _Fault_Count_OutputOverload
+                    0x104e                  _Fault_Count_PCBOverTemperature
+                    0x1050                  _Fault_Count_extOvertemperature
+                    0x1029                  _Flag_180Degree
+                    0x102c                  _Flag_Capture_currentOffset
+                    0x102a                  _Flag_Ref_Update
+                    0x102b                  _Flag_UpdatePercenMod
+                    0x101f                  _HardwareFaultFlag
+                    0x1118                  _OutputVoltageReference
+                    0x1022                  _PWRONValue
+                    0x106e                  _PercentModulation
+                    0x1024                  _SD_Current
+                    0x1023                  _SD_Voltage
+                    0x100a                  _SFRAC16control
+                    0x1020                  _SW1Value
+                    0x1021                  _SW2Value
+                    0x106c                  _Sampling_Count_SineWave
+                    0x1148                  _TMR2_InterruptHandler
+                    0x114c                  _TMR3_InterruptHandler
+                    0x10be                  _acCurrentOffset
+                    0x10c6                  _acCurrentOffsetAverage
+                    0x10ca                  _acCurrentOffsetCounter
+                    0x1030                  _acCurrentOffsetFlag
+                    0x1082                  _adc_avg_currentInput
+                    0x1088                  _adc_avg_currentOutput
+                    0x108a                  _adc_avg_pcbTemp
+                    0x1084                  _adc_avg_voltageInput
+                    0x1086                  _adc_avg_voltageOutput
+                    0x1078                  _adc_ibatt
+                    0x107c                  _adc_iout
+                    0x10ac                  _adc_offset0
+                    0x10ae                  _adc_offset1
+                    0x10b0                  _adc_offset2
+                    0x10b2                  _adc_offset3
+                    0x10b4                  _adc_offset4
+                    0x1080                  _adc_temperature
+                    0x107a                  _adc_vbatt
+                    0x107e                  _adc_vout
+                    0x10aa                  _avdd_measr
+                    0x10cc                  _averageRectifiedCurrent
+                    0x103a                  _cntLEDTick
+                    0x103c                  _cntToggle
+                    0x106a                  _countFanOn
+                    0x1068                  _countFlt1
+                    0x105e                  _countOverCurrentInput
+                    0x1060                  _countOverCurrentOutput
+                    0x1058                  _countOverVoltage
+                    0x105c                  _countOverVoltageOutput
+                    0x1062                  _countOverload
+                    0x1064                  _countPCBOvertemperature
+                    0x1066                  _countTransfmrOvertemp
+                    0x105a                  _countUnderVoltage
+                    0x1056                  _criticalFaultCounter
+                    0x102e                  _criticalFaultFlag
+                    0x102d                  _criticalFaultRestartFlag
+                    0x10e4                  _currentArrayCnt
+                    0x10b8                  _delta_adc_iin
+                    0x10ba                  _delta_adc_iout
+                    0x1015                  _displayState
+                    0x1012                  _driveState
+                    0x101e                  _extTemperatureOverFlag
+                    0x1010                  _faultData
+                    0x100f                  _faultState
+                    0x1016                  _fullBridgeState
+                    0x1011                  _hardwareFault
+                    0x113e                  _i2c1_driver_Masteri2cISR
+                    0x1140                  _i2c1_driver_Slavei2cISR
+                    0x113c                  _i2c1_driver_busCollisionISR
+                    0x1110                  _ibatt_u16
+                    0x10fa                  _iin_mA
+                    0x10e6                  _iin_mv
+                    0x101a                  _inputOverCurrentFlag
+                    0x10bc                  _inverterOutputCurrent
+                    0x10c4                  _inverterOutputOverCurrent
+                    0x1106                  _iout_mA
+                    0x10f2                  _iout_mv
+                    0x10b6                  _iout_mv_u16
+                    0x1114                  _iout_u16
+                    0x10ce                  _maxInverterOutputCurrent
+                    0x101b                  _outputOverCurrentFlag
+                    0x1019                  _outputOverVoltageFlag
+                    0x101c                  _outputOverloadFlag
+                    0x1142                  _outputVoltageABC
                     0x1ffa                  _outputVoltageHistory
-                    0x1014                  _outputVoltagePID
-                    0x103b                  _output_ac
-                    0x1039                  _output_fan
-                    0x103a                  _output_softstart
-                    0x1031                  _pcbTemperatureOverFlag
-                    0x10d6                  _peakInverterOutputVoltage
-                    0x100a                  _pfcCurrentPID
-                    0x1000                  _pfcVoltagePID
-                    0x1020                  _readTempQ15
-                    0x10d4                  _rectifiedInverterOutputCurrent
-                    0x10e4                  _rectifiedInverterOutputCurrentArray
-                    0x10f4                  _rectifiedInverterOutputCurrentSum
-                    0x10b4                  _sampl_ch0
-                    0x10b6                  _sampl_ch1
-                    0x10b8                  _sampl_ch2
-                    0x10ba                  _sampl_ch3
-                    0x10bc                  _sampl_ch4
-                    0x103c                  _startFullBridgeFlag
-                    0x10a0                  _sum_ch0
-                    0x10a4                  _sum_ch1
-                    0x10a8                  _sum_ch2
-                    0x10ac                  _sum_ch3
-                    0x10b0                  _sum_ch4
-                    0x1027                  _switchState
-                    0x1056                  _systemRestartCounter
-                    0x1022                  _systemState
-                    0x111e                  _temp_c
-                    0x110a                  _temp_mv
-                    0x112a                  _temp_u16
-                    0x1028                  _thermoState
-                    0x102b                  _vbattOverVoltageFlag
-                    0x102c                  _vbattUnderVoltageFlag
-                    0x1122                  _vbatt_u16
-                    0x1112                  _vin
-                    0x10fe                  _vin_mv
-                    0x1116                  _vout
-                    0x1102                  _vout_mv
-                    0x1126                  _vout_u16
-                    0x112e                  _xxx
+                    0x1000                  _outputVoltagePID
+                    0x1027                  _output_ac
+                    0x1025                  _output_fan
+                    0x1026                  _output_softstart
+                    0x101d                  _pcbTemperatureOverFlag
+                    0x10c2                  _peakInverterOutputVoltage
+                    0x100c                  _readTempQ15
+                    0x10c0                  _rectifiedInverterOutputCurrent
+                    0x10d0                  _rectifiedInverterOutputCurrentArray
+                    0x10e0                  _rectifiedInverterOutputCurrentSum
+                    0x10a0                  _sampl_ch0
+                    0x10a2                  _sampl_ch1
+                    0x10a4                  _sampl_ch2
+                    0x10a6                  _sampl_ch3
+                    0x10a8                  _sampl_ch4
+                    0x1028                  _startFullBridgeFlag
+                    0x108c                  _sum_ch0
+                    0x1090                  _sum_ch1
+                    0x1094                  _sum_ch2
+                    0x1098                  _sum_ch3
+                    0x109c                  _sum_ch4
+                    0x1013                  _switchState
+                    0x1042                  _systemRestartCounter
+                    0x100e                  _systemState
+                    0x110a                  _temp_c
+                    0x10f6                  _temp_mv
+                    0x1116                  _temp_u16
+                    0x1014                  _thermoState
+                    0x1017                  _vbattOverVoltageFlag
+                    0x1018                  _vbattUnderVoltageFlag
+                    0x110e                  _vbatt_u16
+                    0x10fe                  _vin
+                    0x10ea                  _vin_mv
+                    0x1102                  _vout
+                    0x10ee                  _vout_mv
+                    0x1112                  _vout_u16
+                    0x111a                  _xxx
 
 External Symbols in Program Memory (by address):
 
                   0x000200                  __resetPRI
                   0x00023c                  __psv_init
-                  0x000248                  __data_init
                   0x000248                  __data_init_extended
+                  0x000248                  __data_init
                   0x00031a                  __OscillatorFail
                   0x00033a                  __StackError
                   0x00035c                  __AddressError
@@ -474,187 +456,186 @@ External Symbols in Program Memory (by address):
                   0x00050e                  _PID
                   0x000552                  _PIDInit
                   0x00056a                  ___fixunssfsi
-                  0x0005a0                  ___floatsisf
-                  0x0005a6                  ___floatunsisf
-                  0x0005aa                  __funpack
-                  0x0005d4                  ___udivsi3
-                  0x0005f4                  ___subsf3
-                  0x0005f4                  ___subsf3x
-                  0x000606                  ___addsf3
-                  0x000606                  ___addsf3x
-                  0x0007d0                  ___divsf3x
-                  0x0007d0                  ___divsf3
-                  0x000962                  __sdivf
-                  0x00098e                  ___mulsf3
-                  0x00098e                  ___mulsf3x
-                  0x000a9a                  __dnrmpackf
-                  0x000aee                  __unpackdnrmf
-                  0x000b4c                  __typef
-                  0x000b80                  __propnanf
-                  0x000b92                  __spackf
-                  0x000c38                  __unpackf
-                  0x000c9e                  ___floatdisf
-                  0x000cbe                  ___floatundisf
-                  0x000d1c                  __fpack
-                  0x000d68                  _sineTable_20KHz
-                  0x001038                  _PriorityHigh
-                  0x001086                  _PriorityMedium
-                  0x00139e                  _Delay_ms
-                  0x0013b2                  _FLT1_Detected
-                  0x0013bc                  _ADC_ISR
-                  0x00163a                  _FullBridgeDrive
-                  0x0016b2                  _InitValue
-                  0x0016cc                  _FaultCheck
-                  0x00195e                  _UpdateParameter
-                  0x0019bc                  _SentParameters
-                  0x001a84                  _init_outputVoltageLoop
-                  0x001ab4                  _outputVoltageLoop
-                  0x001b02                  _OutputSoftStartRoutine
-                  0x001b20                  _main
-                  0x001b4a                  _i2c1_driver_close
-                  0x001b52                  _i2c1_enableIRQ
-                  0x001b5c                  _i2c1_IRQisEnabled
-                  0x001b7a                  _i2c1_disableIRQ
-                  0x001b84                  _i2c1_clearIRQ
-                  0x001b8e                  _i2c1_setIRQ
-                  0x001b98                  _i2c1_waitForEvent
-                  0x001bc8                  _i2c1_driver_driver_open
-                  0x001be8                  _i2c1_driver_initSlaveHardware
-                  0x001c02                  _i2c1_driver_resetBus
-                  0x001c08                  _i2c1_driver_start
-                  0x001c10                  _i2c1_driver_restart
-                  0x001c18                  _i2c1_driver_stop
-                  0x001c20                  _i2c1_driver_isNACK
-                  0x001c38                  _i2c1_driver_startRX
-                  0x001c40                  _i2c1_driver_getRXData
-                  0x001c4a                  _i2c1_driver_TXData
-                  0x001c56                  _i2c1_driver_sendACK
-                  0x001c60                  _i2c1_driver_sendNACK
-                  0x001c6a                  _i2c1_driver_releaseClock
-                  0x001c72                  _i2c1_driver_isBuferFull
-                  0x001c90                  _i2c1_driver_isStart
-                  0x001ca8                  _i2c1_driver_isAddress
-                  0x001cbe                  _i2c1_driver_isStop
-                  0x001cd6                  _i2c1_driver_isData
-                  0x001cee                  _i2c1_driver_isRead
-                  0x001d06                  _i2c1_driver_clearBusCollision
-                  0x001d0e                  _i2c1_driver_enableStartIRQ
-                  0x001d14                  _i2c1_driver_disableStartIRQ
-                  0x001d1a                  _i2c1_driver_enableStopIRQ
-                  0x001d20                  _i2c1_driver_disableStopIRQ
-                  0x001d26                  _i2c1_driver_setBusCollisionISR
-                  0x001d32                  _i2c1_driver_setMasterI2cISR
-                  0x001d3e                  _i2c1_driver_setSlaveI2cISR
-                  0x001d4a                  _RESET_GetCause
-                  0x001e6e                  _RESET_CauseClearAll
-                  0x001e76                  _PWM_Initialize
-                  0x001f48                  _PWM_SpecialEvent_Tasks
-                  0x001f62                  _PWM_Generator1_Tasks
-                  0x001f7c                  _PWM_Generator2_Tasks
-                  0x001f96                  _PWM_SetGenerator3InterruptHandler
-                  0x001fa2                  _UART1_Initialize
-                  0x001fb6                  _UART1_Read
-                  0x001fd4                  _UART1_Write
-                  0x001fec                  _UART1_IsRxReady
-                  0x002004                  _UART1_IsTxReady
-                  0x002026                  _UART1_IsTxDone
-                  0x00203e                  _UART1_StatusGet
-                  0x002046                  _UART1_DataReady
-                  0x00204e                  _UART1_is_tx_ready
-                  0x002056                  _UART1_is_rx_ready
-                  0x00205e                  _UART1_is_tx_done
-                  0x002066                  _TMR2_Initialize
-                  0x002086                  _TMR2_Period16BitSet
-                  0x002094                  _TMR2_Period16BitGet
-                  0x00209c                  _TMR2_Counter16BitSet
-                  0x0020aa                  _TMR2_Counter16BitGet
-                  0x0020b8                  _TMR2_SetInterruptHandler
-                  0x0020c8                  _TMR2_Start
-                  0x0020d4                  _TMR2_Stop
-                  0x0020de                  _TMR2_GetElapsedThenClear
-                  0x0020f4                  _TMR2_SoftwareCounterGet
-                  0x0020fe                  _TMR2_SoftwareCounterClear
-                  0x002106                  _TMR3_Initialize
-                  0x002126                  _TMR3_Period16BitSet
-                  0x002134                  _TMR3_Period16BitGet
-                  0x00213c                  _TMR3_Counter16BitSet
-                  0x00214a                  _TMR3_Counter16BitGet
-                  0x002158                  _TMR3_SetInterruptHandler
-                  0x002168                  _TMR3_Start
-                  0x002174                  _TMR3_Stop
-                  0x00217e                  _TMR3_GetElapsedThenClear
-                  0x002194                  _TMR3_SoftwareCounterGet
-                  0x00219e                  _TMR3_SoftwareCounterClear
-                  0x0021a6                  _PIN_MANAGER_Initialize
-                  0x002220                  _CLOCK_Initialize
-                  0x0022b6                  _INTERRUPT_Initialize
-                  0x002318                  _SYSTEM_Initialize
-                  0x002334                  _ADC1_Initialize
-                  0x002360                  _ADC1_SetInterruptHandler
-                  0x00236c                  ___delay32
+                  0x0005a0                  ___floatunsisf
+                  0x0005a4                  __funpack
+                  0x0005ce                  ___udivsi3
+                  0x0005ee                  ___mulsf3
+                  0x0005ee                  ___mulsf3x
+                  0x0006fa                  __dnrmpackf
+                  0x00074e                  __unpackdnrmf
+                  0x0007ac                  __typef
+                  0x0007e0                  __propnanf
+                  0x0007f2                  ___floatundisf
+                  0x000850                  __fpack
+                  0x00089c                  _sineTable_20KHz
+                  0x000b6c                  _PriorityHigh
+                  0x000bba                  _PriorityMedium
+                  0x000ed2                  _Delay_ms
+                  0x000ee6                  _FLT1_Detected
+                  0x000ef0                  _ADC_ISR
+                  0x0010ee                  _DCVoltageCalculate
+                  0x00118c                  _DCCurrentCalculate
+                  0x00122a                  _ACVoltageCalculate
+                  0x0012c8                  _ACCurrentCalculate
+                  0x001340                  _PCBTempCalculate
+                  0x0013e4                  _FullBridgeDrive
+                  0x00145c                  _InitValue
+                  0x001476                  _FaultCheck
+                  0x001708                  _UpdateParameter
+                  0x001766                  _SentParameters
+                  0x00182e                  _init_outputVoltageLoop
+                  0x00185e                  _outputVoltageLoop
+                  0x0018ac                  _OutputSoftStartRoutine
+                  0x0018ca                  _main
+                  0x0018f4                  _i2c1_driver_close
+                  0x0018fc                  _i2c1_enableIRQ
+                  0x001906                  _i2c1_IRQisEnabled
+                  0x001924                  _i2c1_disableIRQ
+                  0x00192e                  _i2c1_clearIRQ
+                  0x001938                  _i2c1_setIRQ
+                  0x001942                  _i2c1_waitForEvent
+                  0x001972                  _i2c1_driver_driver_open
+                  0x001992                  _i2c1_driver_initSlaveHardware
+                  0x0019ac                  _i2c1_driver_resetBus
+                  0x0019b2                  _i2c1_driver_start
+                  0x0019ba                  _i2c1_driver_restart
+                  0x0019c2                  _i2c1_driver_stop
+                  0x0019ca                  _i2c1_driver_isNACK
+                  0x0019e2                  _i2c1_driver_startRX
+                  0x0019ea                  _i2c1_driver_getRXData
+                  0x0019f4                  _i2c1_driver_TXData
+                  0x001a00                  _i2c1_driver_sendACK
+                  0x001a0a                  _i2c1_driver_sendNACK
+                  0x001a14                  _i2c1_driver_releaseClock
+                  0x001a1c                  _i2c1_driver_isBuferFull
+                  0x001a3a                  _i2c1_driver_isStart
+                  0x001a52                  _i2c1_driver_isAddress
+                  0x001a68                  _i2c1_driver_isStop
+                  0x001a80                  _i2c1_driver_isData
+                  0x001a98                  _i2c1_driver_isRead
+                  0x001ab0                  _i2c1_driver_clearBusCollision
+                  0x001ab8                  _i2c1_driver_enableStartIRQ
+                  0x001abe                  _i2c1_driver_disableStartIRQ
+                  0x001ac4                  _i2c1_driver_enableStopIRQ
+                  0x001aca                  _i2c1_driver_disableStopIRQ
+                  0x001ad0                  _i2c1_driver_setBusCollisionISR
+                  0x001adc                  _i2c1_driver_setMasterI2cISR
+                  0x001ae8                  _i2c1_driver_setSlaveI2cISR
+                  0x001af4                  _RESET_GetCause
+                  0x001c18                  _RESET_CauseClearAll
+                  0x001c20                  _PWM_Initialize
+                  0x001cf2                  _PWM_SpecialEvent_Tasks
+                  0x001d0c                  _PWM_Generator1_Tasks
+                  0x001d26                  _PWM_Generator2_Tasks
+                  0x001d40                  _PWM_SetGenerator3InterruptHandler
+                  0x001d4c                  _UART1_Initialize
+                  0x001d60                  _UART1_Read
+                  0x001d7e                  _UART1_Write
+                  0x001d96                  _UART1_IsRxReady
+                  0x001dae                  _UART1_IsTxReady
+                  0x001dd0                  _UART1_IsTxDone
+                  0x001de8                  _UART1_StatusGet
+                  0x001df0                  _UART1_DataReady
+                  0x001df8                  _UART1_is_tx_ready
+                  0x001e00                  _UART1_is_rx_ready
+                  0x001e08                  _UART1_is_tx_done
+                  0x001e10                  _TMR2_Initialize
+                  0x001e30                  _TMR2_Period16BitSet
+                  0x001e3e                  _TMR2_Period16BitGet
+                  0x001e46                  _TMR2_Counter16BitSet
+                  0x001e54                  _TMR2_Counter16BitGet
+                  0x001e62                  _TMR2_SetInterruptHandler
+                  0x001e72                  _TMR2_Start
+                  0x001e7e                  _TMR2_Stop
+                  0x001e88                  _TMR2_GetElapsedThenClear
+                  0x001e9e                  _TMR2_SoftwareCounterGet
+                  0x001ea8                  _TMR2_SoftwareCounterClear
+                  0x001eb0                  _TMR3_Initialize
+                  0x001ed0                  _TMR3_Period16BitSet
+                  0x001ede                  _TMR3_Period16BitGet
+                  0x001ee6                  _TMR3_Counter16BitSet
+                  0x001ef4                  _TMR3_Counter16BitGet
+                  0x001f02                  _TMR3_SetInterruptHandler
+                  0x001f12                  _TMR3_Start
+                  0x001f1e                  _TMR3_Stop
+                  0x001f28                  _TMR3_GetElapsedThenClear
+                  0x001f3e                  _TMR3_SoftwareCounterGet
+                  0x001f48                  _TMR3_SoftwareCounterClear
+                  0x001f50                  _PIN_MANAGER_Initialize
+                  0x001fca                  _CLOCK_Initialize
+                  0x00201a                  _INTERRUPT_Initialize
+                  0x0020bc                  _SYSTEM_Initialize
+                  0x0020d8                  _ADC1_Initialize
+                  0x002104                  _ADC1_SetInterruptHandler
+                  0x002110                  ___delay32
                   0x0057fa                  __FGS.sec
 
 External Symbols in Program Memory (by name):
 
-                  0x002334                  _ADC1_Initialize
-                  0x002360                  _ADC1_SetInterruptHandler
-                  0x0013bc                  _ADC_ISR
-                  0x002220                  _CLOCK_Initialize
-                  0x00139e                  _Delay_ms
-                  0x0013b2                  _FLT1_Detected
-                  0x0016cc                  _FaultCheck
-                  0x00163a                  _FullBridgeDrive
-                  0x0022b6                  _INTERRUPT_Initialize
-                  0x0016b2                  _InitValue
-                  0x001b02                  _OutputSoftStartRoutine
+                  0x0012c8                  _ACCurrentCalculate
+                  0x00122a                  _ACVoltageCalculate
+                  0x0020d8                  _ADC1_Initialize
+                  0x002104                  _ADC1_SetInterruptHandler
+                  0x000ef0                  _ADC_ISR
+                  0x001fca                  _CLOCK_Initialize
+                  0x00118c                  _DCCurrentCalculate
+                  0x0010ee                  _DCVoltageCalculate
+                  0x000ed2                  _Delay_ms
+                  0x000ee6                  _FLT1_Detected
+                  0x001476                  _FaultCheck
+                  0x0013e4                  _FullBridgeDrive
+                  0x00201a                  _INTERRUPT_Initialize
+                  0x00145c                  _InitValue
+                  0x0018ac                  _OutputSoftStartRoutine
+                  0x001340                  _PCBTempCalculate
                   0x00050e                  _PID
                   0x000552                  _PIDInit
-                  0x0021a6                  _PIN_MANAGER_Initialize
-                  0x001f62                  _PWM_Generator1_Tasks
-                  0x001f7c                  _PWM_Generator2_Tasks
-                  0x001e76                  _PWM_Initialize
-                  0x001f96                  _PWM_SetGenerator3InterruptHandler
-                  0x001f48                  _PWM_SpecialEvent_Tasks
-                  0x001038                  _PriorityHigh
-                  0x001086                  _PriorityMedium
-                  0x001e6e                  _RESET_CauseClearAll
-                  0x001d4a                  _RESET_GetCause
-                  0x002318                  _SYSTEM_Initialize
-                  0x0019bc                  _SentParameters
-                  0x0020aa                  _TMR2_Counter16BitGet
-                  0x00209c                  _TMR2_Counter16BitSet
-                  0x0020de                  _TMR2_GetElapsedThenClear
-                  0x002066                  _TMR2_Initialize
-                  0x002094                  _TMR2_Period16BitGet
-                  0x002086                  _TMR2_Period16BitSet
-                  0x0020b8                  _TMR2_SetInterruptHandler
-                  0x0020fe                  _TMR2_SoftwareCounterClear
-                  0x0020f4                  _TMR2_SoftwareCounterGet
-                  0x0020c8                  _TMR2_Start
-                  0x0020d4                  _TMR2_Stop
-                  0x00214a                  _TMR3_Counter16BitGet
-                  0x00213c                  _TMR3_Counter16BitSet
-                  0x00217e                  _TMR3_GetElapsedThenClear
-                  0x002106                  _TMR3_Initialize
-                  0x002134                  _TMR3_Period16BitGet
-                  0x002126                  _TMR3_Period16BitSet
-                  0x002158                  _TMR3_SetInterruptHandler
-                  0x00219e                  _TMR3_SoftwareCounterClear
-                  0x002194                  _TMR3_SoftwareCounterGet
-                  0x002168                  _TMR3_Start
-                  0x002174                  _TMR3_Stop
-                  0x002046                  _UART1_DataReady
-                  0x001fa2                  _UART1_Initialize
-                  0x001fec                  _UART1_IsRxReady
-                  0x002026                  _UART1_IsTxDone
-                  0x002004                  _UART1_IsTxReady
-                  0x001fb6                  _UART1_Read
-                  0x00203e                  _UART1_StatusGet
-                  0x001fd4                  _UART1_Write
-                  0x002056                  _UART1_is_rx_ready
-                  0x00205e                  _UART1_is_tx_done
-                  0x00204e                  _UART1_is_tx_ready
-                  0x00195e                  _UpdateParameter
+                  0x001f50                  _PIN_MANAGER_Initialize
+                  0x001d0c                  _PWM_Generator1_Tasks
+                  0x001d26                  _PWM_Generator2_Tasks
+                  0x001c20                  _PWM_Initialize
+                  0x001d40                  _PWM_SetGenerator3InterruptHandler
+                  0x001cf2                  _PWM_SpecialEvent_Tasks
+                  0x000b6c                  _PriorityHigh
+                  0x000bba                  _PriorityMedium
+                  0x001c18                  _RESET_CauseClearAll
+                  0x001af4                  _RESET_GetCause
+                  0x0020bc                  _SYSTEM_Initialize
+                  0x001766                  _SentParameters
+                  0x001e54                  _TMR2_Counter16BitGet
+                  0x001e46                  _TMR2_Counter16BitSet
+                  0x001e88                  _TMR2_GetElapsedThenClear
+                  0x001e10                  _TMR2_Initialize
+                  0x001e3e                  _TMR2_Period16BitGet
+                  0x001e30                  _TMR2_Period16BitSet
+                  0x001e62                  _TMR2_SetInterruptHandler
+                  0x001ea8                  _TMR2_SoftwareCounterClear
+                  0x001e9e                  _TMR2_SoftwareCounterGet
+                  0x001e72                  _TMR2_Start
+                  0x001e7e                  _TMR2_Stop
+                  0x001ef4                  _TMR3_Counter16BitGet
+                  0x001ee6                  _TMR3_Counter16BitSet
+                  0x001f28                  _TMR3_GetElapsedThenClear
+                  0x001eb0                  _TMR3_Initialize
+                  0x001ede                  _TMR3_Period16BitGet
+                  0x001ed0                  _TMR3_Period16BitSet
+                  0x001f02                  _TMR3_SetInterruptHandler
+                  0x001f48                  _TMR3_SoftwareCounterClear
+                  0x001f3e                  _TMR3_SoftwareCounterGet
+                  0x001f12                  _TMR3_Start
+                  0x001f1e                  _TMR3_Stop
+                  0x001df0                  _UART1_DataReady
+                  0x001d4c                  _UART1_Initialize
+                  0x001d96                  _UART1_IsRxReady
+                  0x001dd0                  _UART1_IsTxDone
+                  0x001dae                  _UART1_IsTxReady
+                  0x001d60                  _UART1_Read
+                  0x001de8                  _UART1_StatusGet
+                  0x001d7e                  _UART1_Write
+                  0x001e00                  _UART1_is_rx_ready
+                  0x001e08                  _UART1_is_tx_done
+                  0x001df8                  _UART1_is_tx_ready
+                  0x001708                  _UpdateParameter
                   0x00035c                  __AddressError
                   0x00039c                  __DMACError
                   0x00050a                  __DefaultInterrupt
@@ -669,72 +650,61 @@ External Symbols in Program Memory (by name):
                   0x00033a                  __StackError
                   0x00046e                  __T2Interrupt
                   0x00049e                  __T3Interrupt
-                  0x000606                  ___addsf3
-                  0x000606                  ___addsf3x
-                  0x00236c                  ___delay32
-                  0x0007d0                  ___divsf3
-                  0x0007d0                  ___divsf3x
+                  0x002110                  ___delay32
                   0x00056a                  ___fixunssfsi
-                  0x000c9e                  ___floatdisf
-                  0x0005a0                  ___floatsisf
-                  0x000cbe                  ___floatundisf
-                  0x0005a6                  ___floatunsisf
-                  0x00098e                  ___mulsf3
-                  0x00098e                  ___mulsf3x
-                  0x0005f4                  ___subsf3
-                  0x0005f4                  ___subsf3x
-                  0x0005d4                  ___udivsi3
+                  0x0007f2                  ___floatundisf
+                  0x0005a0                  ___floatunsisf
+                  0x0005ee                  ___mulsf3
+                  0x0005ee                  ___mulsf3x
+                  0x0005ce                  ___udivsi3
                   0x000248                  __data_init
                   0x000248                  __data_init_extended
-                  0x000a9a                  __dnrmpackf
-                  0x000d1c                  __fpack
-                  0x0005aa                  __funpack
-                  0x000b80                  __propnanf
+                  0x0006fa                  __dnrmpackf
+                  0x000850                  __fpack
+                  0x0005a4                  __funpack
+                  0x0007e0                  __propnanf
                   0x00023c                  __psv_init
                   0x000200                  __resetPRI
-                  0x000962                  __sdivf
-                  0x000b92                  __spackf
-                  0x000b4c                  __typef
-                  0x000aee                  __unpackdnrmf
-                  0x000c38                  __unpackf
-                  0x001b5c                  _i2c1_IRQisEnabled
-                  0x001b84                  _i2c1_clearIRQ
-                  0x001b7a                  _i2c1_disableIRQ
-                  0x001c4a                  _i2c1_driver_TXData
-                  0x001d06                  _i2c1_driver_clearBusCollision
-                  0x001b4a                  _i2c1_driver_close
-                  0x001d14                  _i2c1_driver_disableStartIRQ
-                  0x001d20                  _i2c1_driver_disableStopIRQ
-                  0x001bc8                  _i2c1_driver_driver_open
-                  0x001d0e                  _i2c1_driver_enableStartIRQ
-                  0x001d1a                  _i2c1_driver_enableStopIRQ
-                  0x001c40                  _i2c1_driver_getRXData
-                  0x001be8                  _i2c1_driver_initSlaveHardware
-                  0x001ca8                  _i2c1_driver_isAddress
-                  0x001c72                  _i2c1_driver_isBuferFull
-                  0x001cd6                  _i2c1_driver_isData
-                  0x001c20                  _i2c1_driver_isNACK
-                  0x001cee                  _i2c1_driver_isRead
-                  0x001c90                  _i2c1_driver_isStart
-                  0x001cbe                  _i2c1_driver_isStop
-                  0x001c6a                  _i2c1_driver_releaseClock
-                  0x001c02                  _i2c1_driver_resetBus
-                  0x001c10                  _i2c1_driver_restart
-                  0x001c56                  _i2c1_driver_sendACK
-                  0x001c60                  _i2c1_driver_sendNACK
-                  0x001d26                  _i2c1_driver_setBusCollisionISR
-                  0x001d32                  _i2c1_driver_setMasterI2cISR
-                  0x001d3e                  _i2c1_driver_setSlaveI2cISR
-                  0x001c08                  _i2c1_driver_start
-                  0x001c38                  _i2c1_driver_startRX
-                  0x001c18                  _i2c1_driver_stop
-                  0x001b52                  _i2c1_enableIRQ
-                  0x001b8e                  _i2c1_setIRQ
-                  0x001b98                  _i2c1_waitForEvent
-                  0x001a84                  _init_outputVoltageLoop
-                  0x001b20                  _main
-                  0x001ab4                  _outputVoltageLoop
-                  0x000d68                  _sineTable_20KHz
+                  0x0007ac                  __typef
+                  0x00074e                  __unpackdnrmf
+                  0x001906                  _i2c1_IRQisEnabled
+                  0x00192e                  _i2c1_clearIRQ
+                  0x001924                  _i2c1_disableIRQ
+                  0x0019f4                  _i2c1_driver_TXData
+                  0x001ab0                  _i2c1_driver_clearBusCollision
+                  0x0018f4                  _i2c1_driver_close
+                  0x001abe                  _i2c1_driver_disableStartIRQ
+                  0x001aca                  _i2c1_driver_disableStopIRQ
+                  0x001972                  _i2c1_driver_driver_open
+                  0x001ab8                  _i2c1_driver_enableStartIRQ
+                  0x001ac4                  _i2c1_driver_enableStopIRQ
+                  0x0019ea                  _i2c1_driver_getRXData
+                  0x001992                  _i2c1_driver_initSlaveHardware
+                  0x001a52                  _i2c1_driver_isAddress
+                  0x001a1c                  _i2c1_driver_isBuferFull
+                  0x001a80                  _i2c1_driver_isData
+                  0x0019ca                  _i2c1_driver_isNACK
+                  0x001a98                  _i2c1_driver_isRead
+                  0x001a3a                  _i2c1_driver_isStart
+                  0x001a68                  _i2c1_driver_isStop
+                  0x001a14                  _i2c1_driver_releaseClock
+                  0x0019ac                  _i2c1_driver_resetBus
+                  0x0019ba                  _i2c1_driver_restart
+                  0x001a00                  _i2c1_driver_sendACK
+                  0x001a0a                  _i2c1_driver_sendNACK
+                  0x001ad0                  _i2c1_driver_setBusCollisionISR
+                  0x001adc                  _i2c1_driver_setMasterI2cISR
+                  0x001ae8                  _i2c1_driver_setSlaveI2cISR
+                  0x0019b2                  _i2c1_driver_start
+                  0x0019e2                  _i2c1_driver_startRX
+                  0x0019c2                  _i2c1_driver_stop
+                  0x0018fc                  _i2c1_enableIRQ
+                  0x001938                  _i2c1_setIRQ
+                  0x001942                  _i2c1_waitForEvent
+                  0x00182e                  _init_outputVoltageLoop
+                  0x0018ca                  _main
+                  0x00185e                  _outputVoltageLoop
+                  0x00089c                  _sineTable_20KHz
 
 Memory Configuration
 
@@ -799,7 +769,7 @@ LOAD /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libfx-elf.a
                   0x000002          0x2 SHORT 0x0 ((ABSOLUTE (__reset) >> 0x10) & 0x7f)
                   0x000003          0x2 SHORT 0x0
 
-.text             0x000200        0xb68
+.text             0x000200        0x69c
  *(.init)
  .init            0x000200         0x48 /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(crt0_extendedep.o)
                   0x000200                  __reset
@@ -847,48 +817,29 @@ LOAD /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libfx-elf.a
  .libm.fixunssfsi
                   0x00056a         0x36 /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(fixunssfsi.EP_o)
                   0x00056a                  ___fixunssfsi
- .libm.floatsisf
-                  0x0005a0          0x6 /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(floatsisf.EP_o)
-                  0x0005a0                  ___floatsisf
  .libm.floatunsisf
-                  0x0005a6          0x4 /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(floatunsisf.EP_o)
-                  0x0005a6                  ___floatunsisf
- .libm.funpack    0x0005aa         0x2a /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(funpack.EP_o)
-                  0x0005aa                  __funpack
- .libm.udivsi3    0x0005d4         0x20 /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(udivsi3.EP_o)
-                  0x0005d4                  ___udivsi3
- .libmx           0x0005f4        0x1dc /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(addsf3x.EP_o)
-                  0x0005f4                  ___subsf3
-                  0x0005f4                  ___subsf3x
-                  0x000606                  ___addsf3
-                  0x000606                  ___addsf3x
- .libmx           0x0007d0        0x1be /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(divsf3x.EP_o)
-                  0x0007d0                  ___divsf3x
-                  0x0007d0                  ___divsf3
-                  0x000962                  __sdivf
- .libmx           0x00098e        0x10c /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(mulsf3x.EP_o)
-                  0x00098e                  ___mulsf3
-                  0x00098e                  ___mulsf3x
- .libmx           0x000a9a         0x54 /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(dnrmpackfx.EP_o)
-                  0x000a9a                  __dnrmpackf
- .libmx           0x000aee         0x5e /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(unpackdnrmfx.EP_o)
-                  0x000aee                  __unpackdnrmf
- .libmx           0x000b4c         0x34 /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(typefx.EP_o)
-                  0x000b4c                  __typef
- .libmx           0x000b80         0x12 /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(propnanfx.EP_o)
-                  0x000b80                  __propnanf
- .libmx           0x000b92         0xa6 /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(spackfx.EP_o)
-                  0x000b92                  __spackf
- .libmx           0x000c38         0x66 /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(unpackfx.EP_o)
-                  0x000c38                  __unpackf
- .libm.floatdisf
-                  0x000c9e         0x20 /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(floatdisf.EP_o)
-                  0x000c9e                  ___floatdisf
+                  0x0005a0          0x4 /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(floatunsisf.EP_o)
+                  0x0005a0                  ___floatunsisf
+ .libm.funpack    0x0005a4         0x2a /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(funpack.EP_o)
+                  0x0005a4                  __funpack
+ .libm.udivsi3    0x0005ce         0x20 /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(udivsi3.EP_o)
+                  0x0005ce                  ___udivsi3
+ .libmx           0x0005ee        0x10c /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(mulsf3x.EP_o)
+                  0x0005ee                  ___mulsf3
+                  0x0005ee                  ___mulsf3x
+ .libmx           0x0006fa         0x54 /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(dnrmpackfx.EP_o)
+                  0x0006fa                  __dnrmpackf
+ .libmx           0x00074e         0x5e /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(unpackdnrmfx.EP_o)
+                  0x00074e                  __unpackdnrmf
+ .libmx           0x0007ac         0x34 /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(typefx.EP_o)
+                  0x0007ac                  __typef
+ .libmx           0x0007e0         0x12 /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(propnanfx.EP_o)
+                  0x0007e0                  __propnanf
  .libm.floatundisf
-                  0x000cbe         0x5e /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(floatundisf.EP_o)
-                  0x000cbe                  ___floatundisf
- .libm.fpack      0x000d1c         0x4c /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(fpack.EP_o)
-                  0x000d1c                  __fpack
+                  0x0007f2         0x5e /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(floatundisf.EP_o)
+                  0x0007f2                  ___floatundisf
+ .libm.fpack      0x000850         0x4c /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(fpack.EP_o)
+                  0x000850                  __fpack
 
 usercode
  *(usercode)
@@ -910,7 +861,7 @@ __FOSCSEL
 
 __FGS             0x0057fa          0x2
  *(__FGS.sec*)
- __FGS.sec        0x0057fa          0x2 /CW/_FGSX´
+ __FGS.sec        0x0057fa          0x2 /CW/_FGSX
                   0x0057fa                  __FGS.sec
 
 __FUID0
@@ -928,7 +879,7 @@ __FUID3
 .comment
  *(.comment)
 
-.debug_info       0x000000      0x10d52
+.debug_info       0x000000      0x10d1a
  *(.debug_info)
  .debug_info      0x000000        0x43f build/default/production/mcc_generated_files/clock.o
  .debug_info      0x00043f        0x4a4 build/default/production/mcc_generated_files/reset.o
@@ -942,28 +893,22 @@ __FUID3
  .debug_info      0x007d0f        0x89e build/default/production/mcc_generated_files/tmr2.o
  .debug_info      0x0085ad        0x88c build/default/production/mcc_generated_files/tmr3.o
  .debug_info      0x008e39       0x33d5 build/default/production/mcc_generated_files/i2c1_driver.o
- .debug_info      0x00c20e       0x40a6 build/default/production/main.o
- .debug_info      0x0102b4         0x9a build/default/production/pid.o
- .debug_info      0x01034e         0x90 /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(fixunssfsi.EP_o)
- .debug_info      0x0103de         0x8f /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(floatsisf.EP_o)
- .debug_info      0x01046d         0x91 /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(floatunsisf.EP_o)
- .debug_info      0x0104fe         0x8d /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(funpack.EP_o)
- .debug_info      0x01058b         0x8d /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(udivsi3.EP_o)
- .debug_info      0x010618         0x9d /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(addsf3x.EP_o)
- .debug_info      0x0106b5         0x9d /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(divsf3x.EP_o)
- .debug_info      0x010752         0x9d /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(mulsf3x.EP_o)
- .debug_info      0x0107ef         0xa0 /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(dnrmpackfx.EP_o)
- .debug_info      0x01088f         0xa2 /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(unpackdnrmfx.EP_o)
- .debug_info      0x010931         0x9c /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(typefx.EP_o)
- .debug_info      0x0109cd         0x9f /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(propnanfx.EP_o)
- .debug_info      0x010a6c         0x9d /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(spackfx.EP_o)
- .debug_info      0x010b09         0x9e /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(unpackfx.EP_o)
- .debug_info      0x010ba7         0x8f /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(floatdisf.EP_o)
- .debug_info      0x010c36         0x91 /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(floatundisf.EP_o)
- .debug_info      0x010cc7         0x8b /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(fpack.EP_o)
+ .debug_info      0x00c20e       0x4401 build/default/production/main.o
+ .debug_info      0x01060f         0x9a build/default/production/pid.o
+ .debug_info      0x0106a9         0x90 /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(fixunssfsi.EP_o)
+ .debug_info      0x010739         0x91 /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(floatunsisf.EP_o)
+ .debug_info      0x0107ca         0x8d /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(funpack.EP_o)
+ .debug_info      0x010857         0x8d /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(udivsi3.EP_o)
+ .debug_info      0x0108e4         0x9d /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(mulsf3x.EP_o)
+ .debug_info      0x010981         0xa0 /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(dnrmpackfx.EP_o)
+ .debug_info      0x010a21         0xa2 /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(unpackdnrmfx.EP_o)
+ .debug_info      0x010ac3         0x9c /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(typefx.EP_o)
+ .debug_info      0x010b5f         0x9f /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(propnanfx.EP_o)
+ .debug_info      0x010bfe         0x91 /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(floatundisf.EP_o)
+ .debug_info      0x010c8f         0x8b /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(fpack.EP_o)
  *(.gnu.linkonce.wi.*)
 
-.debug_abbrev     0x000000       0x10cc
+.debug_abbrev     0x000000       0x108b
  *(.debug_abbrev)
  .debug_abbrev    0x000000          0x1 build/default/production/mcc_generated_files/mcc.o
  .debug_abbrev    0x000001         0xc5 build/default/production/mcc_generated_files/clock.o
@@ -978,27 +923,21 @@ __FUID3
  .debug_abbrev    0x0008de        0x18d build/default/production/mcc_generated_files/tmr2.o
  .debug_abbrev    0x000a6b        0x18d build/default/production/mcc_generated_files/tmr3.o
  .debug_abbrev    0x000bf8        0x1a4 build/default/production/mcc_generated_files/i2c1_driver.o
- .debug_abbrev    0x000d9c        0x1c8 build/default/production/main.o
- .debug_abbrev    0x000f64         0x14 build/default/production/pid.o
- .debug_abbrev    0x000f78         0x14 /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(fixunssfsi.EP_o)
- .debug_abbrev    0x000f8c         0x14 /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(floatsisf.EP_o)
- .debug_abbrev    0x000fa0         0x14 /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(floatunsisf.EP_o)
- .debug_abbrev    0x000fb4         0x14 /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(funpack.EP_o)
- .debug_abbrev    0x000fc8         0x14 /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(udivsi3.EP_o)
- .debug_abbrev    0x000fdc         0x14 /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(addsf3x.EP_o)
- .debug_abbrev    0x000ff0         0x14 /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(divsf3x.EP_o)
- .debug_abbrev    0x001004         0x14 /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(mulsf3x.EP_o)
- .debug_abbrev    0x001018         0x14 /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(dnrmpackfx.EP_o)
- .debug_abbrev    0x00102c         0x14 /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(unpackdnrmfx.EP_o)
- .debug_abbrev    0x001040         0x14 /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(typefx.EP_o)
- .debug_abbrev    0x001054         0x14 /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(propnanfx.EP_o)
- .debug_abbrev    0x001068         0x14 /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(spackfx.EP_o)
- .debug_abbrev    0x00107c         0x14 /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(unpackfx.EP_o)
- .debug_abbrev    0x001090         0x14 /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(floatdisf.EP_o)
- .debug_abbrev    0x0010a4         0x14 /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(floatundisf.EP_o)
- .debug_abbrev    0x0010b8         0x14 /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(fpack.EP_o)
+ .debug_abbrev    0x000d9c        0x1ff build/default/production/main.o
+ .debug_abbrev    0x000f9b         0x14 build/default/production/pid.o
+ .debug_abbrev    0x000faf         0x14 /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(fixunssfsi.EP_o)
+ .debug_abbrev    0x000fc3         0x14 /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(floatunsisf.EP_o)
+ .debug_abbrev    0x000fd7         0x14 /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(funpack.EP_o)
+ .debug_abbrev    0x000feb         0x14 /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(udivsi3.EP_o)
+ .debug_abbrev    0x000fff         0x14 /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(mulsf3x.EP_o)
+ .debug_abbrev    0x001013         0x14 /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(dnrmpackfx.EP_o)
+ .debug_abbrev    0x001027         0x14 /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(unpackdnrmfx.EP_o)
+ .debug_abbrev    0x00103b         0x14 /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(typefx.EP_o)
+ .debug_abbrev    0x00104f         0x14 /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(propnanfx.EP_o)
+ .debug_abbrev    0x001063         0x14 /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(floatundisf.EP_o)
+ .debug_abbrev    0x001077         0x14 /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(fpack.EP_o)
 
-.debug_line       0x000000       0x1cdd
+.debug_line       0x000000       0x191c
  *(.debug_line)
  .debug_line      0x000000         0x1a build/default/production/mcc_generated_files/mcc.o
  .debug_line      0x00001a        0x12c build/default/production/mcc_generated_files/clock.o
@@ -1013,28 +952,21 @@ __FUID3
  .debug_line      0x000bf8        0x168 build/default/production/mcc_generated_files/tmr2.o
  .debug_line      0x000d60        0x168 build/default/production/mcc_generated_files/tmr3.o
  .debug_line      0x000ec8        0x1c4 build/default/production/mcc_generated_files/i2c1_driver.o
- .debug_line      0x00108c        0x3a1 build/default/production/main.o
- .debug_line      0x00142d         0x60 build/default/production/pid.o
- .debug_line      0x00148d         0x53 /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(fixunssfsi.EP_o)
- .debug_line      0x0014e0         0x3a /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(floatsisf.EP_o)
- .debug_line      0x00151a         0x3b /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(floatunsisf.EP_o)
- .debug_line      0x001555         0x4a /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(funpack.EP_o)
- .debug_line      0x00159f         0x45 /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(udivsi3.EP_o)
- .debug_line      0x0015e4        0x136 /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(addsf3x.EP_o)
- .debug_line      0x00171a        0x124 /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(divsf3x.EP_o)
- .debug_line      0x00183e         0xcc /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(mulsf3x.EP_o)
- .debug_line      0x00190a         0x72 /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(dnrmpackfx.EP_o)
- .debug_line      0x00197c         0x7a /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(unpackdnrmfx.EP_o)
- .debug_line      0x0019f6         0x5e /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(typefx.EP_o)
- .debug_line      0x001a54         0x51 /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(propnanfx.EP_o)
- .debug_line      0x001aa5         0x98 /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(spackfx.EP_o)
- .debug_line      0x001b3d         0x79 /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(unpackfx.EP_o)
- .debug_line      0x001bb6         0x1a /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(errno.EP_o)
- .debug_line      0x001bd0         0x47 /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(floatdisf.EP_o)
- .debug_line      0x001c17         0x6c /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(floatundisf.EP_o)
- .debug_line      0x001c83         0x5a /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(fpack.EP_o)
+ .debug_line      0x00108c        0x3e6 build/default/production/main.o
+ .debug_line      0x001472         0x60 build/default/production/pid.o
+ .debug_line      0x0014d2         0x53 /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(fixunssfsi.EP_o)
+ .debug_line      0x001525         0x3b /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(floatunsisf.EP_o)
+ .debug_line      0x001560         0x4a /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(funpack.EP_o)
+ .debug_line      0x0015aa         0x45 /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(udivsi3.EP_o)
+ .debug_line      0x0015ef         0xcc /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(mulsf3x.EP_o)
+ .debug_line      0x0016bb         0x72 /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(dnrmpackfx.EP_o)
+ .debug_line      0x00172d         0x7a /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(unpackdnrmfx.EP_o)
+ .debug_line      0x0017a7         0x5e /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(typefx.EP_o)
+ .debug_line      0x001805         0x51 /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(propnanfx.EP_o)
+ .debug_line      0x001856         0x6c /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(floatundisf.EP_o)
+ .debug_line      0x0018c2         0x5a /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(fpack.EP_o)
 
-.debug_frame      0x000000       0x1014
+.debug_frame      0x000000       0x1096
  *(.debug_frame)
  .debug_frame     0x000000         0x2e build/default/production/mcc_generated_files/clock.o
  .debug_frame     0x00002e        0x118 build/default/production/mcc_generated_files/reset.o
@@ -1048,9 +980,9 @@ __FUID3
  .debug_frame     0x000714        0x18a build/default/production/mcc_generated_files/tmr2.o
  .debug_frame     0x00089e        0x18a build/default/production/mcc_generated_files/tmr3.o
  .debug_frame     0x000a28        0x404 build/default/production/mcc_generated_files/i2c1_driver.o
- .debug_frame     0x000e2c        0x1e8 build/default/production/main.o
+ .debug_frame     0x000e2c        0x26a build/default/production/main.o
 
-.debug_str        0x000000       0x1090
+.debug_str        0x000000       0x10b9
  *(.debug_str)
  .debug_str       0x000000          0xb build/default/production/mcc_generated_files/clock.o
  .debug_str       0x00000b         0x17 build/default/production/mcc_generated_files/reset.o
@@ -1064,7 +996,7 @@ __FUID3
  .debug_str       0x0004c8         0x32 build/default/production/mcc_generated_files/tmr2.o
  .debug_str       0x0004fa         0x32 build/default/production/mcc_generated_files/tmr3.o
  .debug_str       0x00052c        0x2a2 build/default/production/mcc_generated_files/i2c1_driver.o
- .debug_str       0x0007ce        0x8c2 build/default/production/main.o
+ .debug_str       0x0007ce        0x8eb build/default/production/main.o
 
 .debug_loc
  *(.debug_loc)
@@ -1073,7 +1005,7 @@ __FUID3
  *(.debug_macinfo)
 
 .debug_pubnames
-                  0x000000       0x162e
+                  0x000000       0x166e
  *(.debug_pubnames)
  .debug_pubnames
                   0x000000         0x27 build/default/production/mcc_generated_files/clock.o
@@ -1100,12 +1032,12 @@ __FUID3
  .debug_pubnames
                   0x0006b9        0x3f9 build/default/production/mcc_generated_files/i2c1_driver.o
  .debug_pubnames
-                  0x000ab2        0xb7c build/default/production/main.o
+                  0x000ab2        0xbbc build/default/production/main.o
 
 .debug_ranges
  *(.debug_ranges)
 
-.debug_aranges    0x000000        0x320
+.debug_aranges    0x000000        0x290
  *(.debug_aranges)
  .debug_aranges
                   0x000000         0x18 build/default/production/mcc_generated_files/clock.o
@@ -1138,37 +1070,25 @@ __FUID3
  .debug_aranges
                   0x000188         0x18 /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(fixunssfsi.EP_o)
  .debug_aranges
-                  0x0001a0         0x18 /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(floatsisf.EP_o)
+                  0x0001a0         0x18 /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(floatunsisf.EP_o)
  .debug_aranges
-                  0x0001b8         0x18 /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(floatunsisf.EP_o)
+                  0x0001b8         0x18 /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(funpack.EP_o)
  .debug_aranges
-                  0x0001d0         0x18 /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(funpack.EP_o)
+                  0x0001d0         0x18 /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(udivsi3.EP_o)
  .debug_aranges
-                  0x0001e8         0x18 /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(udivsi3.EP_o)
+                  0x0001e8         0x18 /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(mulsf3x.EP_o)
  .debug_aranges
-                  0x000200         0x18 /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(addsf3x.EP_o)
+                  0x000200         0x18 /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(dnrmpackfx.EP_o)
  .debug_aranges
-                  0x000218         0x18 /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(divsf3x.EP_o)
+                  0x000218         0x18 /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(unpackdnrmfx.EP_o)
  .debug_aranges
-                  0x000230         0x18 /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(mulsf3x.EP_o)
+                  0x000230         0x18 /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(typefx.EP_o)
  .debug_aranges
-                  0x000248         0x18 /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(dnrmpackfx.EP_o)
+                  0x000248         0x18 /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(propnanfx.EP_o)
  .debug_aranges
-                  0x000260         0x18 /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(unpackdnrmfx.EP_o)
+                  0x000260         0x18 /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(floatundisf.EP_o)
  .debug_aranges
-                  0x000278         0x18 /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(typefx.EP_o)
- .debug_aranges
-                  0x000290         0x18 /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(propnanfx.EP_o)
- .debug_aranges
-                  0x0002a8         0x18 /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(spackfx.EP_o)
- .debug_aranges
-                  0x0002c0         0x18 /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(unpackfx.EP_o)
- .debug_aranges
-                  0x0002d8         0x18 /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(floatdisf.EP_o)
- .debug_aranges
-                  0x0002f0         0x18 /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(floatundisf.EP_o)
- .debug_aranges
-                  0x000308         0x18 /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(fpack.EP_o)
+                  0x000278         0x18 /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(fpack.EP_o)
                     0x0000                  WREG0 = 0x0
                     0x0000                  _WREG0 = 0x0
                     0x0002                  WREG1 = 0x2
@@ -2290,256 +2210,246 @@ LOAD /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libm-elf.a
 LOAD /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-elf.a
 END GROUP
 OUTPUT(dist/default/production/dsPicPureSineInverter_24220.X.production.elf elf32-pic30)
-LOAD /CW/_FGSX´
+LOAD /CW/_FGSX
 LOAD jump_table
 LOAD default_isr
 LOAD data_init
 
 __c30_signature
-                  0x000320         0x9c
+                  0x000290         0x8a
  __c30_signature
-                  0x000320          0x6 build/default/production/mcc_generated_files/mcc.o
+                  0x000290          0x6 build/default/production/mcc_generated_files/mcc.o
  __c30_signature
-                  0x000326          0x6 build/default/production/mcc_generated_files/clock.o
+                  0x000296          0x6 build/default/production/mcc_generated_files/clock.o
  __c30_signature
-                  0x00032c          0x6 build/default/production/mcc_generated_files/reset.o
+                  0x00029c          0x6 build/default/production/mcc_generated_files/reset.o
  __c30_signature
-                  0x000332          0x6 build/default/production/mcc_generated_files/pin_manager.o
+                  0x0002a2          0x6 build/default/production/mcc_generated_files/pin_manager.o
  __c30_signature
-                  0x000338          0x6 build/default/production/mcc_generated_files/system.o
+                  0x0002a8          0x6 build/default/production/mcc_generated_files/system.o
  __c30_signature
-                  0x00033e          0x6 build/default/production/mcc_generated_files/interrupt_manager.o
+                  0x0002ae          0x6 build/default/production/mcc_generated_files/interrupt_manager.o
  __c30_signature
-                  0x000344          0x6 build/default/production/mcc_generated_files/traps.o
+                  0x0002b4          0x6 build/default/production/mcc_generated_files/traps.o
  __c30_signature
-                  0x00034a          0x6 build/default/production/mcc_generated_files/pwm.o
+                  0x0002ba          0x6 build/default/production/mcc_generated_files/pwm.o
  __c30_signature
-                  0x000350          0x6 build/default/production/mcc_generated_files/uart1.o
+                  0x0002c0          0x6 build/default/production/mcc_generated_files/uart1.o
  __c30_signature
-                  0x000356          0x6 build/default/production/mcc_generated_files/adc1.o
+                  0x0002c6          0x6 build/default/production/mcc_generated_files/adc1.o
  __c30_signature
-                  0x00035c          0x6 build/default/production/mcc_generated_files/tmr2.o
+                  0x0002cc          0x6 build/default/production/mcc_generated_files/tmr2.o
  __c30_signature
-                  0x000362          0x6 build/default/production/mcc_generated_files/tmr3.o
+                  0x0002d2          0x6 build/default/production/mcc_generated_files/tmr3.o
  __c30_signature
-                  0x000368          0x6 build/default/production/mcc_generated_files/i2c1_driver.o
+                  0x0002d8          0x6 build/default/production/mcc_generated_files/i2c1_driver.o
  __c30_signature
-                  0x00036e          0x6 build/default/production/main.o
+                  0x0002de          0x6 build/default/production/main.o
  __c30_signature
-                  0x000374          0x6 /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(crt0_extendedep.o)
+                  0x0002e4          0x6 /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(crt0_extendedep.o)
  __c30_signature
-                  0x00037a          0x6 /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(data_init_extended.o)
+                  0x0002ea          0x6 /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(data_init_extended.o)
  __c30_signature
-                  0x000380          0x6 /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(delay32ep.Meo)
+                  0x0002f0          0x6 /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(delay32ep.Meo)
  __c30_signature
-                  0x000386          0x6 /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(fixunssfsi.EP_o)
+                  0x0002f6          0x6 /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(fixunssfsi.EP_o)
  __c30_signature
-                  0x00038c          0x6 /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(floatsisf.EP_o)
+                  0x0002fc          0x6 /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(floatunsisf.EP_o)
  __c30_signature
-                  0x000392          0x6 /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(floatunsisf.EP_o)
+                  0x000302          0x6 /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(funpack.EP_o)
  __c30_signature
-                  0x000398          0x6 /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(funpack.EP_o)
+                  0x000308          0x6 /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(udivsi3.EP_o)
  __c30_signature
-                  0x00039e          0x6 /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(udivsi3.EP_o)
+                  0x00030e          0x6 /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(floatundisf.EP_o)
  __c30_signature
-                  0x0003a4          0x6 /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(errno.EP_o)
- __c30_signature
-                  0x0003aa          0x6 /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(floatdisf.EP_o)
- __c30_signature
-                  0x0003b0          0x6 /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(floatundisf.EP_o)
- __c30_signature
-                  0x0003b6          0x6 /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(fpack.EP_o)
+                  0x000314          0x6 /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(fpack.EP_o)
 
 .debug_pubtypes
-                  0x0003bc       0x11e1
+                  0x00031a       0x11e1
  .debug_pubtypes
-                  0x0003bc         0x4c build/default/production/mcc_generated_files/clock.o
+                  0x00031a         0x4c build/default/production/mcc_generated_files/clock.o
  .debug_pubtypes
-                  0x000408         0x42 build/default/production/mcc_generated_files/reset.o
+                  0x000366         0x42 build/default/production/mcc_generated_files/reset.o
  .debug_pubtypes
-                  0x00044a         0x84 build/default/production/mcc_generated_files/pin_manager.o
+                  0x0003a8         0x84 build/default/production/mcc_generated_files/pin_manager.o
  .debug_pubtypes
-                  0x0004ce        0x327 build/default/production/mcc_generated_files/system.o
+                  0x00042c        0x327 build/default/production/mcc_generated_files/system.o
  .debug_pubtypes
-                  0x0007f5         0xb2 build/default/production/mcc_generated_files/interrupt_manager.o
+                  0x000753         0xb2 build/default/production/mcc_generated_files/interrupt_manager.o
  .debug_pubtypes
-                  0x0008a7         0x94 build/default/production/mcc_generated_files/traps.o
+                  0x000805         0x94 build/default/production/mcc_generated_files/traps.o
  .debug_pubtypes
-                  0x00093b        0x1e7 build/default/production/mcc_generated_files/pwm.o
+                  0x000899        0x1e7 build/default/production/mcc_generated_files/pwm.o
  .debug_pubtypes
-                  0x000b22         0x7c build/default/production/mcc_generated_files/uart1.o
+                  0x000a80         0x7c build/default/production/mcc_generated_files/uart1.o
  .debug_pubtypes
-                  0x000b9e        0x129 build/default/production/mcc_generated_files/adc1.o
+                  0x000afc        0x129 build/default/production/mcc_generated_files/adc1.o
  .debug_pubtypes
-                  0x000cc7         0xa4 build/default/production/mcc_generated_files/tmr2.o
+                  0x000c25         0xa4 build/default/production/mcc_generated_files/tmr2.o
  .debug_pubtypes
-                  0x000d6b         0xa4 build/default/production/mcc_generated_files/tmr3.o
+                  0x000cc9         0xa4 build/default/production/mcc_generated_files/tmr3.o
  .debug_pubtypes
-                  0x000e0f        0x3b7 build/default/production/mcc_generated_files/i2c1_driver.o
+                  0x000d6d        0x3b7 build/default/production/mcc_generated_files/i2c1_driver.o
  .debug_pubtypes
-                  0x0011c6        0x3d7 build/default/production/main.o
+                  0x001124        0x3d7 build/default/production/main.o
 
-.nbss               0x1000        0x156
- .nbss              0x1000        0x130 build/default/production/main.o
-                    0x1000                  _pfcVoltagePID
-                    0x100a                  _pfcCurrentPID
-                    0x1014                  _outputVoltagePID
-                    0x101e                  _SFRAC16control
-                    0x1020                  _readTempQ15
-                    0x1022                  _systemState
-                    0x1023                  _faultState
-                    0x1024                  _faultData
-                    0x1025                  _hardwareFault
-                    0x1026                  _driveState
-                    0x1027                  _switchState
-                    0x1028                  _thermoState
-                    0x1029                  _displayState
-                    0x102a                  _fullBridgeState
-                    0x102b                  _vbattOverVoltageFlag
-                    0x102c                  _vbattUnderVoltageFlag
-                    0x102d                  _outputOverVoltageFlag
-                    0x102e                  _inputOverCurrentFlag
-                    0x102f                  _outputOverCurrentFlag
-                    0x1030                  _outputOverloadFlag
-                    0x1031                  _pcbTemperatureOverFlag
-                    0x1032                  _extTemperatureOverFlag
-                    0x1033                  _HardwareFaultFlag
-                    0x1034                  _SW1Value
-                    0x1035                  _SW2Value
-                    0x1036                  _PWRONValue
-                    0x1037                  _SD_Voltage
-                    0x1038                  _SD_Current
-                    0x1039                  _output_fan
-                    0x103a                  _output_softstart
-                    0x103b                  _output_ac
-                    0x103c                  _startFullBridgeFlag
-                    0x103d                  _Flag_180Degree
-                    0x103e                  _Flag_Ref_Update
-                    0x103f                  _Flag_UpdatePercenMod
-                    0x1040                  _Flag_Capture_currentOffset
-                    0x1041                  _criticalFaultRestartFlag
-                    0x1042                  _criticalFaultFlag
-                    0x1044                  _acCurrentOffsetFlag
-                    0x1046                  _Cnt_ms
-                    0x1048                  _Count_1mS
-                    0x104a                  _Count_20mS
-                    0x104c                  _Count_200mS
-                    0x104e                  _cntLEDTick
-                    0x1050                  _cntToggle
-                    0x1052                  _CntStable
-                    0x1054                  _CntTransError
-                    0x1056                  _systemRestartCounter
-                    0x1058                  _Fault_Count_InputUnderVoltage
-                    0x105a                  _Fault_Count_InputOverVoltage
-                    0x105c                  _Fault_Count_OutputOverVoltage
-                    0x105e                  _Fault_Count_InputOverCurrent
-                    0x1060                  _Fault_Count_OutputOverCurrent
-                    0x1062                  _Fault_Count_PCBOverTemperature
-                    0x1064                  _Fault_Count_extOvertemperature
-                    0x1066                  _Fault_Count_OutputOverload
-                    0x1068                  _Fault_Count_FLT1
-                    0x106a                  _criticalFaultCounter
-                    0x106c                  _countOverVoltage
-                    0x106e                  _countUnderVoltage
-                    0x1070                  _countOverVoltageOutput
-                    0x1072                  _countOverCurrentInput
-                    0x1074                  _countOverCurrentOutput
-                    0x1076                  _countOverload
-                    0x1078                  _countPCBOvertemperature
-                    0x107a                  _countTransfmrOvertemp
-                    0x107c                  _countFlt1
-                    0x107e                  _countFanOn
-                    0x1080                  _Sampling_Count_SineWave
-                    0x1082                  _PercentModulation
-                    0x1084                  _Buff_Period
-                    0x1086                  _Buff_Duty
-                    0x108a                  _DutyCycle
-                    0x108c                  _adc_ibatt
-                    0x108e                  _adc_vbatt
-                    0x1090                  _adc_iout
-                    0x1092                  _adc_vout
-                    0x1094                  _adc_temperature
-                    0x1096                  _adc_avg_currentInput
-                    0x1098                  _adc_avg_voltageInput
-                    0x109a                  _adc_avg_voltageOutput
-                    0x109c                  _adc_avg_currentOutput
-                    0x109e                  _adc_avg_pcbTemp
-                    0x10a0                  _sum_ch0
-                    0x10a4                  _sum_ch1
-                    0x10a8                  _sum_ch2
-                    0x10ac                  _sum_ch3
-                    0x10b0                  _sum_ch4
-                    0x10b4                  _sampl_ch0
-                    0x10b6                  _sampl_ch1
-                    0x10b8                  _sampl_ch2
-                    0x10ba                  _sampl_ch3
-                    0x10bc                  _sampl_ch4
-                    0x10be                  _adc_offset0
-                    0x10c0                  _adc_offset1
-                    0x10c2                  _adc_offset2
-                    0x10c4                  _adc_offset3
-                    0x10c6                  _adc_offset4
-                    0x10c8                  _iout_mv_u16
-                    0x10ca                  _delta_adc_iin
-                    0x10cc                  _delta_adc_iout
-                    0x10ce                  _abs_delta_currentOutput
-                    0x10d0                  _inverterOutputCurrent
-                    0x10d2                  _acCurrentOffset
-                    0x10d4                  _rectifiedInverterOutputCurrent
-                    0x10d6                  _peakInverterOutputVoltage
-                    0x10d8                  _inverterOutputOverCurrent
-                    0x10da                  _acCurrentOffsetAverage
-                    0x10de                  _acCurrentOffsetCounter
-                    0x10e0                  _averageRectifiedCurrent
-                    0x10e2                  _maxInverterOutputCurrent
-                    0x10e4                  _rectifiedInverterOutputCurrentArray
-                    0x10f4                  _rectifiedInverterOutputCurrentSum
-                    0x10f8                  _currentArrayCnt
-                    0x10fa                  _iin_mv
-                    0x10fe                  _vin_mv
-                    0x1102                  _vout_mv
-                    0x1106                  _iout_mv
-                    0x110a                  _temp_mv
-                    0x110e                  _iin_mA
-                    0x1112                  _vin
-                    0x1116                  _vout
-                    0x111a                  _iout_mA
-                    0x111e                  _temp_c
-                    0x1122                  _vbatt_u16
-                    0x1124                  _ibatt_u16
-                    0x1126                  _vout_u16
-                    0x1128                  _iout_u16
-                    0x112a                  _temp_u16
-                    0x112c                  _OutputVoltageReference
-                    0x112e                  _xxx
- .nbss              0x1130         0x20 build/default/production/mcc_generated_files/traps.o
- .nbss              0x1150          0x6 build/default/production/mcc_generated_files/i2c1_driver.o
-                    0x1150                  _i2c1_driver_busCollisionISR
-                    0x1152                  _i2c1_driver_Masteri2cISR
-                    0x1154                  _i2c1_driver_Slavei2cISR
+.nbss               0x1000        0x142
+ .nbss              0x1000        0x11c build/default/production/main.o
+                    0x1000                  _outputVoltagePID
+                    0x100a                  _SFRAC16control
+                    0x100c                  _readTempQ15
+                    0x100e                  _systemState
+                    0x100f                  _faultState
+                    0x1010                  _faultData
+                    0x1011                  _hardwareFault
+                    0x1012                  _driveState
+                    0x1013                  _switchState
+                    0x1014                  _thermoState
+                    0x1015                  _displayState
+                    0x1016                  _fullBridgeState
+                    0x1017                  _vbattOverVoltageFlag
+                    0x1018                  _vbattUnderVoltageFlag
+                    0x1019                  _outputOverVoltageFlag
+                    0x101a                  _inputOverCurrentFlag
+                    0x101b                  _outputOverCurrentFlag
+                    0x101c                  _outputOverloadFlag
+                    0x101d                  _pcbTemperatureOverFlag
+                    0x101e                  _extTemperatureOverFlag
+                    0x101f                  _HardwareFaultFlag
+                    0x1020                  _SW1Value
+                    0x1021                  _SW2Value
+                    0x1022                  _PWRONValue
+                    0x1023                  _SD_Voltage
+                    0x1024                  _SD_Current
+                    0x1025                  _output_fan
+                    0x1026                  _output_softstart
+                    0x1027                  _output_ac
+                    0x1028                  _startFullBridgeFlag
+                    0x1029                  _Flag_180Degree
+                    0x102a                  _Flag_Ref_Update
+                    0x102b                  _Flag_UpdatePercenMod
+                    0x102c                  _Flag_Capture_currentOffset
+                    0x102d                  _criticalFaultRestartFlag
+                    0x102e                  _criticalFaultFlag
+                    0x1030                  _acCurrentOffsetFlag
+                    0x1032                  _Cnt_ms
+                    0x1034                  _Count_1mS
+                    0x1036                  _Count_20mS
+                    0x1038                  _Count_200mS
+                    0x103a                  _cntLEDTick
+                    0x103c                  _cntToggle
+                    0x103e                  _CntStable
+                    0x1040                  _CntTransError
+                    0x1042                  _systemRestartCounter
+                    0x1044                  _Fault_Count_InputUnderVoltage
+                    0x1046                  _Fault_Count_InputOverVoltage
+                    0x1048                  _Fault_Count_OutputOverVoltage
+                    0x104a                  _Fault_Count_InputOverCurrent
+                    0x104c                  _Fault_Count_OutputOverCurrent
+                    0x104e                  _Fault_Count_PCBOverTemperature
+                    0x1050                  _Fault_Count_extOvertemperature
+                    0x1052                  _Fault_Count_OutputOverload
+                    0x1054                  _Fault_Count_FLT1
+                    0x1056                  _criticalFaultCounter
+                    0x1058                  _countOverVoltage
+                    0x105a                  _countUnderVoltage
+                    0x105c                  _countOverVoltageOutput
+                    0x105e                  _countOverCurrentInput
+                    0x1060                  _countOverCurrentOutput
+                    0x1062                  _countOverload
+                    0x1064                  _countPCBOvertemperature
+                    0x1066                  _countTransfmrOvertemp
+                    0x1068                  _countFlt1
+                    0x106a                  _countFanOn
+                    0x106c                  _Sampling_Count_SineWave
+                    0x106e                  _PercentModulation
+                    0x1070                  _Buff_Period
+                    0x1072                  _Buff_Duty
+                    0x1076                  _DutyCycle
+                    0x1078                  _adc_ibatt
+                    0x107a                  _adc_vbatt
+                    0x107c                  _adc_iout
+                    0x107e                  _adc_vout
+                    0x1080                  _adc_temperature
+                    0x1082                  _adc_avg_currentInput
+                    0x1084                  _adc_avg_voltageInput
+                    0x1086                  _adc_avg_voltageOutput
+                    0x1088                  _adc_avg_currentOutput
+                    0x108a                  _adc_avg_pcbTemp
+                    0x108c                  _sum_ch0
+                    0x1090                  _sum_ch1
+                    0x1094                  _sum_ch2
+                    0x1098                  _sum_ch3
+                    0x109c                  _sum_ch4
+                    0x10a0                  _sampl_ch0
+                    0x10a2                  _sampl_ch1
+                    0x10a4                  _sampl_ch2
+                    0x10a6                  _sampl_ch3
+                    0x10a8                  _sampl_ch4
+                    0x10aa                  _avdd_measr
+                    0x10ac                  _adc_offset0
+                    0x10ae                  _adc_offset1
+                    0x10b0                  _adc_offset2
+                    0x10b2                  _adc_offset3
+                    0x10b4                  _adc_offset4
+                    0x10b6                  _iout_mv_u16
+                    0x10b8                  _delta_adc_iin
+                    0x10ba                  _delta_adc_iout
+                    0x10bc                  _inverterOutputCurrent
+                    0x10be                  _acCurrentOffset
+                    0x10c0                  _rectifiedInverterOutputCurrent
+                    0x10c2                  _peakInverterOutputVoltage
+                    0x10c4                  _inverterOutputOverCurrent
+                    0x10c6                  _acCurrentOffsetAverage
+                    0x10ca                  _acCurrentOffsetCounter
+                    0x10cc                  _averageRectifiedCurrent
+                    0x10ce                  _maxInverterOutputCurrent
+                    0x10d0                  _rectifiedInverterOutputCurrentArray
+                    0x10e0                  _rectifiedInverterOutputCurrentSum
+                    0x10e4                  _currentArrayCnt
+                    0x10e6                  _iin_mv
+                    0x10ea                  _vin_mv
+                    0x10ee                  _vout_mv
+                    0x10f2                  _iout_mv
+                    0x10f6                  _temp_mv
+                    0x10fa                  _iin_mA
+                    0x10fe                  _vin
+                    0x1102                  _vout
+                    0x1106                  _iout_mA
+                    0x110a                  _temp_c
+                    0x110e                  _vbatt_u16
+                    0x1110                  _ibatt_u16
+                    0x1112                  _vout_u16
+                    0x1114                  _iout_u16
+                    0x1116                  _temp_u16
+                    0x1118                  _OutputVoltageReference
+                    0x111a                  _xxx
+ .nbss              0x111c         0x20 build/default/production/mcc_generated_files/traps.o
+ .nbss              0x113c          0x6 build/default/production/mcc_generated_files/i2c1_driver.o
+                    0x113c                  _i2c1_driver_busCollisionISR
+                    0x113e                  _i2c1_driver_Masteri2cISR
+                    0x1140                  _i2c1_driver_Slavei2cISR
 
-.xbss               0x1156          0x6
- .xbss              0x1156          0x6 build/default/production/main.o
-                    0x1156                  _outputVoltageABC
+.xbss               0x1142          0x6
+ .xbss              0x1142          0x6 build/default/production/main.o
+                    0x1142                  _outputVoltageABC
 
 .ybss               0x1ffa          0x6
  .ybss              0x1ffa          0x6 build/default/production/main.o
                     0x1ffa                  _outputVoltageHistory
 
-.nbss               0x115c          0x8
- .nbss              0x115c          0x4 build/default/production/mcc_generated_files/tmr2.o
-                    0x115c                  _TMR2_InterruptHandler
- .nbss              0x1160          0x4 build/default/production/mcc_generated_files/tmr3.o
-                    0x1160                  _TMR3_InterruptHandler
+.nbss               0x1148          0x8
+ .nbss              0x1148          0x4 build/default/production/mcc_generated_files/tmr2.o
+                    0x1148                  _TMR2_InterruptHandler
+ .nbss              0x114c          0x4 build/default/production/mcc_generated_files/tmr3.o
+                    0x114c                  _TMR3_InterruptHandler
 
-.ndata              0x1164          0x2
- .ndata             0x1164          0x2 build/default/production/mcc_generated_files/traps.o
+.ndata              0x1150          0x2
+ .ndata             0x1150          0x2 build/default/production/mcc_generated_files/traps.o
 
-.nbss               0x1166          0x6
- .nbss              0x1166          0x2 build/default/production/mcc_generated_files/pwm.o
- .nbss              0x1168          0x2 build/default/production/mcc_generated_files/adc1.o
- .nbss              0x116a          0x2 /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(errno.EP_o)
-                    0x116a                  _errno
+.nbss               0x1152          0x4
+ .nbss              0x1152          0x2 build/default/production/mcc_generated_files/pwm.o
+ .nbss              0x1154          0x2 build/default/production/mcc_generated_files/adc1.o
 
 .config_IESO      0x0057f8          0x2
  .config_IESO     0x0057f8          0x2 build/default/production/mcc_generated_files/system.o
@@ -2624,135 +2534,140 @@ __c30_signature
  .ivt._SI2C1Interrupt
                   0x000034          0x2 build/default/production/mcc_generated_files/i2c1_driver.o
 
-.const              0x8d68        0x190 load address 0x000d68  
- .const             0x8d68        0x190 build/default/production/main.o
-                    0x8d68                  _sineTable_20KHz
+.const              0x889c        0x190 load address 0x00089c  
+ .const             0x889c        0x190 build/default/production/main.o
+                    0x889c                  _sineTable_20KHz
 
-.text             0x000ef8       0x1378
- .text            0x000ef8        0xc52 build/default/production/main.o
-                  0x001038                  _PriorityHigh
-                  0x001086                  _PriorityMedium
-                  0x00139e                  _Delay_ms
-                  0x0013b2                  _FLT1_Detected
-                  0x0013bc                  _ADC_ISR
-                  0x00163a                  _FullBridgeDrive
-                  0x0016b2                  _InitValue
-                  0x0016cc                  _FaultCheck
-                  0x00195e                  _UpdateParameter
-                  0x0019bc                  _SentParameters
-                  0x001a84                  _init_outputVoltageLoop
-                  0x001ab4                  _outputVoltageLoop
-                  0x001b02                  _OutputSoftStartRoutine
-                  0x001b20                  _main
- .text            0x001b4a        0x200 build/default/production/mcc_generated_files/i2c1_driver.o
-                  0x001b4a                  _i2c1_driver_close
-                  0x001b52                  _i2c1_enableIRQ
-                  0x001b5c                  _i2c1_IRQisEnabled
-                  0x001b7a                  _i2c1_disableIRQ
-                  0x001b84                  _i2c1_clearIRQ
-                  0x001b8e                  _i2c1_setIRQ
-                  0x001b98                  _i2c1_waitForEvent
-                  0x001bc8                  _i2c1_driver_driver_open
-                  0x001be8                  _i2c1_driver_initSlaveHardware
-                  0x001c02                  _i2c1_driver_resetBus
-                  0x001c08                  _i2c1_driver_start
-                  0x001c10                  _i2c1_driver_restart
-                  0x001c18                  _i2c1_driver_stop
-                  0x001c20                  _i2c1_driver_isNACK
-                  0x001c38                  _i2c1_driver_startRX
-                  0x001c40                  _i2c1_driver_getRXData
-                  0x001c4a                  _i2c1_driver_TXData
-                  0x001c56                  _i2c1_driver_sendACK
-                  0x001c60                  _i2c1_driver_sendNACK
-                  0x001c6a                  _i2c1_driver_releaseClock
-                  0x001c72                  _i2c1_driver_isBuferFull
-                  0x001c90                  _i2c1_driver_isStart
-                  0x001ca8                  _i2c1_driver_isAddress
-                  0x001cbe                  _i2c1_driver_isStop
-                  0x001cd6                  _i2c1_driver_isData
-                  0x001cee                  _i2c1_driver_isRead
-                  0x001d06                  _i2c1_driver_clearBusCollision
-                  0x001d0e                  _i2c1_driver_enableStartIRQ
-                  0x001d14                  _i2c1_driver_disableStartIRQ
-                  0x001d1a                  _i2c1_driver_enableStopIRQ
-                  0x001d20                  _i2c1_driver_disableStopIRQ
-                  0x001d26                  _i2c1_driver_setBusCollisionISR
-                  0x001d32                  _i2c1_driver_setMasterI2cISR
-                  0x001d3e                  _i2c1_driver_setSlaveI2cISR
- .text            0x001d4a        0x12c build/default/production/mcc_generated_files/reset.o
-                  0x001d4a                  _RESET_GetCause
-                  0x001d52                  _RESET_CauseHandler
-                  0x001e6e                  _RESET_CauseClearAll
- .text            0x001e76        0x12c build/default/production/mcc_generated_files/pwm.o
-                  0x001e76                  _PWM_Initialize
-                  0x001f42                  _PWM_SpecialEvent_CallBack
-                  0x001f48                  _PWM_SpecialEvent_Tasks
-                  0x001f5c                  _PWM_Generator1_CallBack
-                  0x001f62                  _PWM_Generator1_Tasks
-                  0x001f76                  _PWM_Generator2_CallBack
-                  0x001f7c                  _PWM_Generator2_Tasks
-                  0x001f90                  _PWM_Generator3_CallBack
-                  0x001f96                  _PWM_SetGenerator3InterruptHandler
- .text            0x001fa2         0xc4 build/default/production/mcc_generated_files/uart1.o
-                  0x001fa2                  _UART1_Initialize
-                  0x001fb6                  _UART1_Read
-                  0x001fd4                  _UART1_Write
-                  0x001fec                  _UART1_IsRxReady
-                  0x002004                  _UART1_IsTxReady
-                  0x002026                  _UART1_IsTxDone
-                  0x00203e                  _UART1_StatusGet
-                  0x002046                  _UART1_DataReady
-                  0x00204e                  _UART1_is_tx_ready
-                  0x002056                  _UART1_is_rx_ready
-                  0x00205e                  _UART1_is_tx_done
- .text            0x002066         0xa0 build/default/production/mcc_generated_files/tmr2.o
-                  0x002066                  _TMR2_Initialize
-                  0x002086                  _TMR2_Period16BitSet
-                  0x002094                  _TMR2_Period16BitGet
-                  0x00209c                  _TMR2_Counter16BitSet
-                  0x0020aa                  _TMR2_Counter16BitGet
-                  0x0020b2                  _TMR2_CallBack
-                  0x0020b8                  _TMR2_SetInterruptHandler
-                  0x0020c8                  _TMR2_Start
-                  0x0020d4                  _TMR2_Stop
-                  0x0020de                  _TMR2_GetElapsedThenClear
-                  0x0020f4                  _TMR2_SoftwareCounterGet
-                  0x0020fe                  _TMR2_SoftwareCounterClear
- .text            0x002106         0xa0 build/default/production/mcc_generated_files/tmr3.o
-                  0x002106                  _TMR3_Initialize
-                  0x002126                  _TMR3_Period16BitSet
-                  0x002134                  _TMR3_Period16BitGet
-                  0x00213c                  _TMR3_Counter16BitSet
-                  0x00214a                  _TMR3_Counter16BitGet
-                  0x002152                  _TMR3_CallBack
-                  0x002158                  _TMR3_SetInterruptHandler
-                  0x002168                  _TMR3_Start
-                  0x002174                  _TMR3_Stop
-                  0x00217e                  _TMR3_GetElapsedThenClear
-                  0x002194                  _TMR3_SoftwareCounterGet
-                  0x00219e                  _TMR3_SoftwareCounterClear
- .text            0x0021a6         0x7a build/default/production/mcc_generated_files/pin_manager.o
-                  0x0021a6                  _PIN_MANAGER_Initialize
- .text            0x002220         0x50 build/default/production/mcc_generated_files/clock.o
-                  0x002220                  _CLOCK_Initialize
+.text             0x000a2c       0x1632
+ .text            0x000a2c        0xec8 build/default/production/main.o
+                  0x000b6c                  _PriorityHigh
+                  0x000bba                  _PriorityMedium
+                  0x000ed2                  _Delay_ms
+                  0x000ee6                  _FLT1_Detected
+                  0x000ef0                  _ADC_ISR
+                  0x0010ee                  _DCVoltageCalculate
+                  0x00118c                  _DCCurrentCalculate
+                  0x00122a                  _ACVoltageCalculate
+                  0x0012c8                  _ACCurrentCalculate
+                  0x001340                  _PCBTempCalculate
+                  0x0013e4                  _FullBridgeDrive
+                  0x00145c                  _InitValue
+                  0x001476                  _FaultCheck
+                  0x001708                  _UpdateParameter
+                  0x001766                  _SentParameters
+                  0x00182e                  _init_outputVoltageLoop
+                  0x00185e                  _outputVoltageLoop
+                  0x0018ac                  _OutputSoftStartRoutine
+                  0x0018ca                  _main
+ .text            0x0018f4        0x200 build/default/production/mcc_generated_files/i2c1_driver.o
+                  0x0018f4                  _i2c1_driver_close
+                  0x0018fc                  _i2c1_enableIRQ
+                  0x001906                  _i2c1_IRQisEnabled
+                  0x001924                  _i2c1_disableIRQ
+                  0x00192e                  _i2c1_clearIRQ
+                  0x001938                  _i2c1_setIRQ
+                  0x001942                  _i2c1_waitForEvent
+                  0x001972                  _i2c1_driver_driver_open
+                  0x001992                  _i2c1_driver_initSlaveHardware
+                  0x0019ac                  _i2c1_driver_resetBus
+                  0x0019b2                  _i2c1_driver_start
+                  0x0019ba                  _i2c1_driver_restart
+                  0x0019c2                  _i2c1_driver_stop
+                  0x0019ca                  _i2c1_driver_isNACK
+                  0x0019e2                  _i2c1_driver_startRX
+                  0x0019ea                  _i2c1_driver_getRXData
+                  0x0019f4                  _i2c1_driver_TXData
+                  0x001a00                  _i2c1_driver_sendACK
+                  0x001a0a                  _i2c1_driver_sendNACK
+                  0x001a14                  _i2c1_driver_releaseClock
+                  0x001a1c                  _i2c1_driver_isBuferFull
+                  0x001a3a                  _i2c1_driver_isStart
+                  0x001a52                  _i2c1_driver_isAddress
+                  0x001a68                  _i2c1_driver_isStop
+                  0x001a80                  _i2c1_driver_isData
+                  0x001a98                  _i2c1_driver_isRead
+                  0x001ab0                  _i2c1_driver_clearBusCollision
+                  0x001ab8                  _i2c1_driver_enableStartIRQ
+                  0x001abe                  _i2c1_driver_disableStartIRQ
+                  0x001ac4                  _i2c1_driver_enableStopIRQ
+                  0x001aca                  _i2c1_driver_disableStopIRQ
+                  0x001ad0                  _i2c1_driver_setBusCollisionISR
+                  0x001adc                  _i2c1_driver_setMasterI2cISR
+                  0x001ae8                  _i2c1_driver_setSlaveI2cISR
+ .text            0x001af4        0x12c build/default/production/mcc_generated_files/reset.o
+                  0x001af4                  _RESET_GetCause
+                  0x001afc                  _RESET_CauseHandler
+                  0x001c18                  _RESET_CauseClearAll
+ .text            0x001c20        0x12c build/default/production/mcc_generated_files/pwm.o
+                  0x001c20                  _PWM_Initialize
+                  0x001cec                  _PWM_SpecialEvent_CallBack
+                  0x001cf2                  _PWM_SpecialEvent_Tasks
+                  0x001d06                  _PWM_Generator1_CallBack
+                  0x001d0c                  _PWM_Generator1_Tasks
+                  0x001d20                  _PWM_Generator2_CallBack
+                  0x001d26                  _PWM_Generator2_Tasks
+                  0x001d3a                  _PWM_Generator3_CallBack
+                  0x001d40                  _PWM_SetGenerator3InterruptHandler
+ .text            0x001d4c         0xc4 build/default/production/mcc_generated_files/uart1.o
+                  0x001d4c                  _UART1_Initialize
+                  0x001d60                  _UART1_Read
+                  0x001d7e                  _UART1_Write
+                  0x001d96                  _UART1_IsRxReady
+                  0x001dae                  _UART1_IsTxReady
+                  0x001dd0                  _UART1_IsTxDone
+                  0x001de8                  _UART1_StatusGet
+                  0x001df0                  _UART1_DataReady
+                  0x001df8                  _UART1_is_tx_ready
+                  0x001e00                  _UART1_is_rx_ready
+                  0x001e08                  _UART1_is_tx_done
+ .text            0x001e10         0xa0 build/default/production/mcc_generated_files/tmr2.o
+                  0x001e10                  _TMR2_Initialize
+                  0x001e30                  _TMR2_Period16BitSet
+                  0x001e3e                  _TMR2_Period16BitGet
+                  0x001e46                  _TMR2_Counter16BitSet
+                  0x001e54                  _TMR2_Counter16BitGet
+                  0x001e5c                  _TMR2_CallBack
+                  0x001e62                  _TMR2_SetInterruptHandler
+                  0x001e72                  _TMR2_Start
+                  0x001e7e                  _TMR2_Stop
+                  0x001e88                  _TMR2_GetElapsedThenClear
+                  0x001e9e                  _TMR2_SoftwareCounterGet
+                  0x001ea8                  _TMR2_SoftwareCounterClear
+ .text            0x001eb0         0xa0 build/default/production/mcc_generated_files/tmr3.o
+                  0x001eb0                  _TMR3_Initialize
+                  0x001ed0                  _TMR3_Period16BitSet
+                  0x001ede                  _TMR3_Period16BitGet
+                  0x001ee6                  _TMR3_Counter16BitSet
+                  0x001ef4                  _TMR3_Counter16BitGet
+                  0x001efc                  _TMR3_CallBack
+                  0x001f02                  _TMR3_SetInterruptHandler
+                  0x001f12                  _TMR3_Start
+                  0x001f1e                  _TMR3_Stop
+                  0x001f28                  _TMR3_GetElapsedThenClear
+                  0x001f3e                  _TMR3_SoftwareCounterGet
+                  0x001f48                  _TMR3_SoftwareCounterClear
+ .text            0x001f50         0x7a build/default/production/mcc_generated_files/pin_manager.o
+                  0x001f50                  _PIN_MANAGER_Initialize
+ .text            0x001fca         0x50 build/default/production/mcc_generated_files/clock.o
+                  0x001fca                  _CLOCK_Initialize
+ .text            0x00201a         0x44 build/default/production/mcc_generated_files/interrupt_manager.o
+                  0x00201a                  _INTERRUPT_Initialize
 
-.dinit            0x002270         0x46
- .dinit           0x002270         0x46 data_init
+.dinit            0x00205e         0x40
+ .dinit           0x00205e         0x40 data_init
 
-.text             0x0022b6         0xb6
- .text            0x0022b6         0x44 build/default/production/mcc_generated_files/interrupt_manager.o
-                  0x0022b6                  _INTERRUPT_Initialize
- .text            0x0022fa         0x3a build/default/production/mcc_generated_files/system.o
-                  0x002318                  _SYSTEM_Initialize
- .text            0x002334         0x38 build/default/production/mcc_generated_files/adc1.o
-                  0x002334                  _ADC1_Initialize
-                  0x00235a                  _ADC1_CallBack
-                  0x002360                  _ADC1_SetInterruptHandler
+.text             0x00209e         0x72
+ .text            0x00209e         0x3a build/default/production/mcc_generated_files/system.o
+                  0x0020bc                  _SYSTEM_Initialize
+ .text            0x0020d8         0x38 build/default/production/mcc_generated_files/adc1.o
+                  0x0020d8                  _ADC1_Initialize
+                  0x0020fe                  _ADC1_CallBack
+                  0x002104                  _ADC1_SetInterruptHandler
 
-.init.delay32     0x00236c         0x1c
- .init.delay32    0x00236c         0x1c /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(delay32ep.Meo)
-                  0x00236c                  ___delay32
+.init.delay32     0x002110         0x1c
+ .init.delay32    0x002110         0x1c /Applications/microchip/xc16/v2.00/bin/bin/../../lib/libc99-pic30-elf.a(delay32ep.Meo)
+                  0x002110                  ___delay32
 
-.text             0x002388         0x18
- .text            0x002388         0x18 build/default/production/mcc_generated_files/traps.o
-                  0x002388                  _TRAPS_halt_on_error
+.text             0x00212c         0x18
+ .text            0x00212c         0x18 build/default/production/mcc_generated_files/traps.o
+                  0x00212c                  _TRAPS_halt_on_error
