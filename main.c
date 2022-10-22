@@ -373,6 +373,7 @@ uint8_t  Flag_180Degree = 0;
 uint8_t  Flag_Ref_Update =0;
 uint8_t  Flag_UpdatePercenMod =0;
 uint8_t  Flag_Capture_currentOffset =0;
+uint8_t  FlagCapture_adc =0;
 
 uint8_t  criticalFaultRestartFlag =0;
 uint8_t  criticalFaultFlag =0;
@@ -438,26 +439,32 @@ uint16_t delta_adc_iin;
 int16_t  delta_adc_iout;
 
 
-// acCurrent
-int16_t  inverterOutputCurrent =0;
-int16_t  acCurrentOffset =0;
-int16_t  rectifiedInverterOutputCurrent = 0, peakInverterOutputVoltage = 0;
-uint16_t inverterOutputOverCurrent;
-uint32_t acCurrentOffsetAverage =0;
-uint16_t acCurrentOffsetCounter =0;
+// acCurrent & acVoltage
+int16_t  inverterOutputCurrent =0, inverterOutputVoltage =0;
+int16_t  acCurrentOffset =0, acVoltageOffset =0;
+int16_t  rectifiedInverterOutputCurrent = 0, rectifiedInverterOutputVoltage = 0,peakInverterOutputVoltage = 0;
+uint16_t inverterOutputOverCurrent, inverterOutputOverVoltage;
+uint32_t acCurrentOffsetAverage =0, acVoltageOffsetAverage =0;
+uint16_t acCurrentOffsetCounter =0, acVoltageOffsetCounter =0;
 
-// AC Current Variables and Moving Avg Variables/Array
+// AC Current Variables and Moving AVG Variables/Array
 uint16_t averageRectifiedCurrent = 0, maxInverterOutputCurrent = 0; 
 uint16_t rectifiedInverterOutputCurrentArray[8] = {0,0,0,0,0,0,0,0}; // 8
 uint32_t rectifiedInverterOutputCurrentSum = 0;
 uint8_t  currentArrayCnt =0;
+
+// AC Voltage Variables and Moving AVG Variables/Array
+uint16_t averageRectifiedVoltage = 0, maxInverterOutputVoltage = 0; 
+uint16_t rectifiedInverterOutputVoltageArray[8] = {0,0,0,0,0,0,0,0}; // 8
+uint32_t rectifiedInverterOutputVoltageSum = 0;
+uint8_t  voltageArrayCnt =0;
 
 float iin_mv, vin_mv, vout_mv, iout_mv, temp_mv;        
 float iin_mA, vin, vout, iout_mA, temp_c;
 uint16_t vbatt_u16, ibatt_u16, vout_u16, iout_u16, temp_u16; // Display
 
 unsigned int OutputVoltageReference = 0;
-unsigned int xxx;
+
 /*
 const unsigned int sineTable_10KHz[100] = {  // 10KHz // 6000 u16 ,  Center Align
    0,  188,  377,  565,  752,  939, 1124, 1309, 1492, 1674,
@@ -507,6 +514,11 @@ void PriorityHigh()  // TMR3 = 50uS = 20KHz
     ClrWdt();
     
     Sampling_Count_SineWave++;  
+    if(Sampling_Count_SineWave == 100)
+    {
+        FlagCapture_adc = ON;
+        outputVoltageLoop();
+    }
     
     if(Sampling_Count_SineWave > 199)  // 20KHz // 200 * 0.005mS = 10mS = 180 Degree
     { 
@@ -515,7 +527,7 @@ void PriorityHigh()  // TMR3 = 50uS = 20KHz
       Flag_180Degree = ON;
       Flag_Ref_Update = ON;
       Flag_Capture_currentOffset = ON;
-      outputVoltageLoop();
+      //outputVoltageLoop();
            
     }
     
@@ -878,14 +890,20 @@ void FLT1_Detected(void)
 // ADC Conversion Complete  7KHz
 void ADC_ISR()  
 {   
-    
-    adc_ibatt = (ADC1BUF0 << 5);       
-    adc_vbatt = (ADC1BUF1 << 5);       
-    adc_vout  = (ADC1BUF2 << 5);      
-    adc_iout  = (ADC1BUF3 << 5);  
-    adc_temperature = (ADC1BUF4 << 5); 
+    if(FlagCapture_adc == ON) // interval time = 5 mS
+    {
+        FlagCapture_adc = OFF;
+        
+        adc_ibatt = (ADC1BUF0 << 5);       
+        adc_vbatt = (ADC1BUF1 << 5);       
+        adc_vout  = (ADC1BUF2 << 5);      
+        adc_iout  = (ADC1BUF3 << 5);  
+        adc_temperature = (ADC1BUF4 << 5);        
+    }
+
  
     inverterOutputCurrent = adc_iout - acCurrentOffset;
+    inverterOutputVoltage = adc_vout; // - acCurrentOffset;
     
     /* Rectify AC current and check for over current condition on the ouput */
     if(inverterOutputCurrent >= 0)
@@ -897,17 +915,34 @@ void ADC_ISR()
         rectifiedInverterOutputCurrent = (-inverterOutputCurrent);
     }
 
+    /* Rectify AC current and check for over voltage condition on the ouput */
+    if(inverterOutputVoltage >= 0)
+    {
+        rectifiedInverterOutputVoltage = inverterOutputVoltage;
+    }
+    else
+    {
+        rectifiedInverterOutputVoltage = (-inverterOutputVoltage);
+    }
+    
     if(systemState != STATE_ERROR)
     {
-    // Find Peak Inverter Output Current
+        // Find Peak Inverter Output Current
         if(rectifiedInverterOutputCurrent > maxInverterOutputCurrent)
         {
             maxInverterOutputCurrent = rectifiedInverterOutputCurrent;
-        }        
+        }
+        
+        // Find Peak Inverter Output Voltage
+        if(rectifiedInverterOutputVoltage > maxInverterOutputVoltage)
+        {
+            maxInverterOutputVoltage = rectifiedInverterOutputVoltage;
+        }         
     }
     else
     {
         maxInverterOutputCurrent =0;
+        maxInverterOutputVoltage =0;
     }
 
     
@@ -922,6 +957,17 @@ void ADC_ISR()
         currentArrayCnt = 0;
     }
 
+    // Moving Average of AC Voltage for AC Voltage Fault
+    rectifiedInverterOutputVoltageSum = rectifiedInverterOutputVoltageSum + rectifiedInverterOutputVoltage - rectifiedInverterOutputVoltageArray[voltageArrayCnt];
+    averageRectifiedVoltage = rectifiedInverterOutputVoltageSum >> 3;
+
+    rectifiedInverterOutputVoltageArray[voltageArrayCnt++] = rectifiedInverterOutputVoltage;
+
+    if(voltageArrayCnt >= 8) // 8
+    {
+        voltageArrayCnt = 0;
+    }
+    
     // Inverter Over Current Fault Check
     // inverterOutputOverCurrent takes into account the delta in the acCurrentOffset
     if((averageRectifiedCurrent > inverterOutputOverCurrent) && (systemState == STATE_NORMAL))
@@ -974,7 +1020,7 @@ void ADC_ISR()
     
     ibatt_u16 = DCCurrentCalculate(adc_avg_currentInput, 32767, adc_offset0);
     vbatt_u16 = DCVoltageCalculate(adc_avg_voltageInput, 32767,  adc_offset1);
-    vout_u16  = ACVoltageCalculate(adc_avg_voltageOutput, 32767,  adc_offset2);  
+    vout_u16  = ACVoltageCalculate(averageRectifiedVoltage, 32767,  adc_offset2);  
     iout_u16  = ACCurrentCalculate(averageRectifiedCurrent);  
     temp_u16  = PCBTempCalculate(adc_avg_pcbTemp,32767,  adc_offset4);
          
@@ -1541,7 +1587,7 @@ void outputVoltageLoop(void)   // PID Voltage Control
     
     SFRAC16control = outputVoltagePID.controlOutput;    
     outputVoltagePID.controlReference = PID_OUTPUTVOLTAGE_REFERENCE;  /* assign initial control reference for PID to be what ever DC */    
-	outputVoltagePID.measuredOutput = adc_vout;  
+	outputVoltagePID.measuredOutput = averageRectifiedVoltage;  
     
     /* Load calculated coefficients */	
 	outputVoltagePID.abcCoefficients[0] = PID_OUTPUTVOLTAGE_A;   
@@ -1551,7 +1597,7 @@ void outputVoltageLoop(void)   // PID Voltage Control
     /* Load calculated history */	
     outputVoltagePID.controlHistory[2] = outputVoltageHistory[1];
     outputVoltagePID.controlHistory[1] = outputVoltageHistory[0];
-    outputVoltagePID.controlHistory[0] = PID_OUTPUTVOLTAGE_REFERENCE - adc_vout;     
+    outputVoltagePID.controlHistory[0] = PID_OUTPUTVOLTAGE_REFERENCE - averageRectifiedVoltage;     
     
             
 }
