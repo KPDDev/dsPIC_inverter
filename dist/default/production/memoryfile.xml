@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <project>
-  <executable name="dist/default/production/dsPicPureSineInverter_24220.X.production.elf">
+  <executable name="dist/default/production/dsPicPureSineInverter_24220_V2.X.production.elf">
     <memory name="data">
       <units>bytes</units>
       <length>4096</length>
-      <used>348</used>
-      <free>3748</free>
+      <used>454</used>
+      <free>3642</free>
     </memory>
     <memory name="program">
       <units>bytes</units>
       <length>32994</length>
-      <used>12006</used>
-      <free>20988</free>
+      <used>13059</used>
+      <free>19935</free>
     </memory>
   </executable>
 </project>

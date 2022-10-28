@@ -24,7 +24,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=dsPicPureSineInverter_24220.X
+PROJECTNAME=dsPicPureSineInverter_24220_V2.X
 
 # Active Configuration
 DEFAULTCONF=default

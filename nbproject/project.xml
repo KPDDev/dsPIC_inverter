@@ -3,7 +3,7 @@
     <type>com.microchip.mplab.nbide.embedded.makeproject</type>
     <configuration>
         <data xmlns="http://www.netbeans.org/ns/make-project/1">
-            <name>dsPicPureSineInverter_24220.X</name>
+            <name>dsPicPureSineInverter_24220_V2.X</name>
             <creation-uuid>45afda78-cf7c-4493-8bd9-de90560fd62c</creation-uuid>
             <make-project-type>0</make-project-type>
             <c-extensions>c</c-extensions>

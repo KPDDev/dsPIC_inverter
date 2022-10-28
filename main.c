@@ -64,6 +64,7 @@
 #include "mcc_generated_files/adc1.h"
 #include "mcc_generated_files/pwm.h"
 #include "mcc_generated_files/uart1.h"
+#include "header.h"
 
 
 // Full Bridge Duty Cycle
@@ -282,6 +283,9 @@ void init_outputVoltageLoop(void);
 void outputVoltageLoop(void);
 void OutputSoftStartRoutine(void);
 
+static void Vout_Check(void);
+static void Reset_PI(void);
+
 // FullBridge
 void FullBridgeDrive(void);
 
@@ -302,6 +306,37 @@ uint16_t PCBTempCalculate(uint16_t adcVal, uint16_t ref, uint16_t offset);
 void Delay_ms(uint16_t d);
 /* ~~~~~~~~~~~~~~~~~~~~~~  PID Variable Definitions  ~~~~~~~~~~~~~~~~~~~~~~~ */
 
+static int32_t  Kp;
+static int32_t  Ki;
+static int32_t  Int_term;
+static uint32_t VoutDelta;
+
+/* Exported functions --------------------------------------------------------- */
+
+int32_t PI_Buck(void);
+int32_t PI_Boost(void);
+int32_t PI_Mixed(void);
+void SetHRTIM_BuckMode(void);
+void SetHRTIM_BoostMode(void);
+void SetHRTIM_MixedMode(void);
+
+/* Exported variables --------------------------------------------------------- */
+
+uint32_t CTMin;
+uint32_t CTMax; 
+uint32_t CTRange;
+uint32_t CurrentDutyA;
+uint32_t CurrentDutyB;
+uint32_t CurrentDutyB_Mixed;
+volatile uint32_t VoutT;
+volatile uint32_t VoutRange;
+volatile uint32_t VoutA;
+volatile uint32_t VoutB;
+volatile uint32_t VinConversion;
+volatile uint32_t VoutConversion;
+volatile uint8_t Idle2Buck;
+volatile uint8_t Idle2Boost; 
+volatile uint8_t Run2Stop;
 /* Variable Declaration required for each PID controller in the application */
 
 tPID outputVoltagePID;  // kritsana
@@ -1616,13 +1651,100 @@ void OutputSoftStartRoutine(void)
     outputVoltagePID.controlReference = PID_OUTPUTVOLTAGE_REFERENCE;   
 }
 
+// @brief  This function sets Vout target parameters
+static void Vout_Check(void)
+{
+  VoutT = (VOUT_TARGET * VOUT_RESISTOR_RATIO) / 10000; /* introduced resistor bridge ratio ~20% */
+  VoutT = (VoutT * 0x1000) / REAL_3V3; /* converted to 12-bit ADC full range with practical 3.3V of application */
+  /* Check where is located VOUT_TARGET (VoutRange will be used as protection table index) */
+  VoutRange = VOUT_TARGET / 1000;
+  /* Check for non interger value set for VOUT_TARGET */
+  VoutDelta = VOUT_TARGET - (VoutRange * 1000);
+  /* Compute factors for linear interpolation based on VOUT_TARGET settings */
+  if (VoutDelta != 0 && VoutRange < 15)
+  {
+    VoutA = ((VoutRange * 1000) + 1000) - VOUT_TARGET;
+    VoutB = VOUT_TARGET - (VoutRange * 1000);
+  }
+  /* and finally apply offset to match protection table where index starts from 0 for 1st 3 volts value */
+  VoutRange -= 3;
+  //CTMax;
+
+}
+
+// @brief  This function calculates new duty order with PI.
+int32_t PI_Buck(void)
+{
+  /* Local variable used to prevent compilation warning */
+  uint32_t lVoutT = VoutT;
+  
+  /* Compute PI for Buck Mode */
+  /* Every time the PI order sets extreme values then CTMax or CTMin are managed */
+  int32_t seterr, pid_out;
+  int32_t error;
+
+  error = (int32_t ) VoutConversion - (int32_t) lVoutT;
+  seterr = (-Kp * error) / 200;
+
+  Int_term = Int_term + ((-Ki * error) / 200);
+
+  if (Int_term > SAT_LIMIT)
+  {
+    Int_term = SAT_LIMIT;
+  }
+  if (Int_term < -(SAT_LIMIT))
+  {
+    Int_term = -(SAT_LIMIT);
+  }
+  pid_out = seterr + Int_term;
+  pid_out += BUCK_PWM_PERIOD / 2;
+
+  if (pid_out >= MAX_DUTY_A)
+  {
+    pid_out = MAX_DUTY_A;
+    CTMax++;
+  }
+  else
+  {
+    if (CTMax != 0)
+    {
+      CTMax--;
+    }
+  }
+  if (pid_out <= MIN_DUTY_A)
+  {
+    pid_out = MIN_DUTY_A;
+    CTMin++;
+  }
+  else
+  {
+    if (CTMin != 0)
+    {
+      CTMin--;
+    }
+  }
+  return  pid_out;
+}
+
+static void Reset_PI(void)
+{
+  /* Reset integral terms for PI */
+  Int_term = 0;
+
+  /* Reset CountS Min and Max */
+  CTMax = 0;
+  CTMin = 0;
+  /* Set Proportional and Integral constant terms*/
+  Ki = 50;
+  Kp = 50;
+}
 
 int main(void)
 {
     // initialize the device
     SYSTEM_Initialize();
      
-    //TMR1_SetInterruptHandler(Indication);      // 200mS
+    Reset_PI();
     
     TMR2_SetInterruptHandler(PriorityMedium);  // 10KHz, 100uS
     TMR2_Start();
@@ -1634,8 +1756,8 @@ int main(void)
     
     ADC1_SetInterruptHandler(ADC_ISR);  
     
-    //AD1CON1bits.ADON = 1;  //ADC1_Enable
     
+    Vout_Check();
     init_outputVoltageLoop();               /* Initialize  AC Voltage PID */   
     //OutputSoftStartRoutine();             /* SoftStartRoutine */
     LD_BYPSS_OFF;
